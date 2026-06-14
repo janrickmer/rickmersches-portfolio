@@ -103,6 +103,15 @@ header.hero .wrap{max-width:860px}
 section{padding:60px 0 52px;position:relative}
 section:not(:last-of-type)::after{content:"";position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:min(620px,76%);height:1px;background:linear-gradient(90deg,transparent,var(--hairline) 22%,var(--gold) 50%,var(--hairline) 78%,transparent)}
 .lede{font-size:1.06rem;color:var(--ink-soft)}
+.preamble{max-width:780px;text-align:center}
+.preamble .eyebrow{justify-content:center}
+.preamble h2{font-size:clamp(1.7rem,3.8vw,2.5rem);margin-bottom:.5em}
+.preamble .flourish{display:flex;align-items:center;justify-content:center;gap:13px;margin:0 0 26px}
+.preamble .flourish span{height:1px;width:96px;background:linear-gradient(90deg,transparent,var(--gold))}
+.preamble .flourish span:last-child{background:linear-gradient(90deg,var(--gold),transparent)}
+.preamble p{margin-left:auto;margin-right:auto;max-width:64ch;text-align:left}
+.thesis{font-family:var(--serif);font-size:clamp(1.22rem,2.5vw,1.6rem);line-height:1.46;color:var(--ink);max-width:62ch;text-align:center;margin-bottom:1.1em}
+.thesis em{font-style:italic;color:var(--gold-deep)}
 
 /* ---------- Map ---------- */
 .map-frame{border:1px solid var(--hairline);border-radius:22px;background:linear-gradient(180deg,#FFFDF7,var(--paper-deep));padding:20px 16px 10px;margin:26px 0 18px;box-shadow:0 20px 44px -32px rgba(96,74,24,.4)}
@@ -209,6 +218,7 @@ footer p{max-width:90ch;margin:0 auto .7em}
 
 <nav class="topnav" aria-label="Kapitel-Navigation">
   <div class="navinner">
+    <a href="#leitgedanke">Leitgedanke</a>
     <a href="#karte">Weltkarte</a>
     <a href="#allokation">Allokation</a>
     <a href="#bausteine">Bausteine</a>
@@ -238,6 +248,30 @@ footer p{max-width:90ch;margin:0 auto .7em}
     </div>
   </div>
 </header>
+
+<!-- ════════ LEITGEDANKE ════════ -->
+<section id="leitgedanke">
+  <div class="wrap preamble">
+    <div class="eyebrow"><span class="rn">◆</span> Leitgedanke</div>
+    <h2>Worum es geht</h2>
+    <div class="flourish"><span></span><span class="diamond">◆</span><span></span></div>
+    <p class="thesis">Das Rickmersche Portfolio verfolgt ein einziges, klar umrissenes Ziel: am
+    weltweiten wirtschaftlichen Wachstum teilzuhaben — und dabei das Risiko <em>so weit wie irgend
+    möglich</em> zu senken.</p>
+    <p>Sein Mittel dazu ist die breitestmögliche Streuung: über Kontinente, über Industrie- und
+    Schwellenländer, über Branchen und Tausende einzelne Unternehmen hinweg. Je breiter das Kapital
+    verteilt ist, desto weniger hängt das Gesamtergebnis am Schicksal eines einzelnen Wertes, einer
+    einzelnen Branche oder einer einzelnen Volkswirtschaft — unternehmensspezifische Rückschläge
+    werden im großen Verbund aufgefangen.</p>
+    <p>Anders als ein einzelner Welt-Index überlässt dieses Portfolio die geografische Verteilung
+    aber nicht allein der Marktkapitalisierung, sondern <strong>betrachtet die Länderallokation
+    gezielt und steuert sie bewusst</strong>. So dominiert kein einzelner Markt das Ergebnis, und
+    kein Klumpenrisiko wächst unbemerkt heran. Wer in die Aktien der ganzen Welt investiert, trägt
+    die Weltwirtschaft als Ganzes — mit all ihren Wachstumszentren, ohne sein Schicksal an eine
+    einzige Region zu binden. Maximale Diversifikation ist hier kein Selbstzweck, sondern das
+    Werkzeug, das Ertragschance und Risikostreuung in Einklang bringt.</p>
+  </div>
+</section>
 
 <!-- ════════ I · WELTKARTE ════════ -->
 <section id="karte">
