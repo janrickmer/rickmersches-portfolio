@@ -1,0 +1,434 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-19T09:27:34+00:00",
+  "title": "Design System: Das Rickmersche Portfolio",
+  "extensions": {
+    "colorMeta": {
+      "finance-blue": {
+        "role": "primary",
+        "displayName": "Finanzblau",
+        "tonalRamp": [
+          "oklch(15% 0.200 261.6)",
+          "oklch(25% 0.200 261.6)",
+          "oklch(35% 0.200 261.6)",
+          "oklch(48% 0.200 261.6)",
+          "oklch(60% 0.200 261.6)",
+          "oklch(72% 0.200 261.6)",
+          "oklch(84% 0.200 261.6)",
+          "oklch(95% 0.200 261.6)"
+        ]
+      },
+      "finance-blue-deep": {
+        "role": "primary",
+        "displayName": "Tiefblau",
+        "tonalRamp": [
+          "oklch(15% 0.175 261.6)",
+          "oklch(25% 0.175 261.6)",
+          "oklch(35% 0.175 261.6)",
+          "oklch(48% 0.175 261.6)",
+          "oklch(60% 0.175 261.6)",
+          "oklch(72% 0.175 261.6)",
+          "oklch(84% 0.175 261.6)",
+          "oklch(95% 0.175 261.6)"
+        ]
+      },
+      "series-europe": {
+        "role": "secondary",
+        "displayName": "Regionsreihe Europa",
+        "tonalRamp": [
+          "oklch(15% 0.138 252.0)",
+          "oklch(25% 0.138 252.0)",
+          "oklch(35% 0.138 252.0)",
+          "oklch(48% 0.138 252.0)",
+          "oklch(60% 0.138 252.0)",
+          "oklch(72% 0.138 252.0)",
+          "oklch(84% 0.138 252.0)",
+          "oklch(95% 0.138 252.0)"
+        ]
+      },
+      "series-asia-pacific": {
+        "role": "secondary",
+        "displayName": "Regionsreihe Asien-Pazifik",
+        "tonalRamp": [
+          "oklch(15% 0.102 184.3)",
+          "oklch(25% 0.102 184.3)",
+          "oklch(35% 0.102 184.3)",
+          "oklch(48% 0.102 184.3)",
+          "oklch(60% 0.102 184.3)",
+          "oklch(72% 0.102 184.3)",
+          "oklch(84% 0.102 184.3)",
+          "oklch(95% 0.102 184.3)"
+        ]
+      },
+      "map-q3": {
+        "role": "secondary",
+        "displayName": "Kartenstufe 3",
+        "tonalRamp": [
+          "oklch(15% 0.175 262.5)",
+          "oklch(25% 0.175 262.5)",
+          "oklch(35% 0.175 262.5)",
+          "oklch(48% 0.175 262.5)",
+          "oklch(60% 0.175 262.5)",
+          "oklch(72% 0.175 262.5)",
+          "oklch(84% 0.175 262.5)",
+          "oklch(95% 0.175 262.5)"
+        ]
+      },
+      "series-gold": {
+        "role": "tertiary",
+        "displayName": "Goldreihe",
+        "tonalRamp": [
+          "oklch(15% 0.124 85.3)",
+          "oklch(25% 0.124 85.3)",
+          "oklch(35% 0.124 85.3)",
+          "oklch(48% 0.124 85.3)",
+          "oklch(60% 0.124 85.3)",
+          "oklch(72% 0.124 85.3)",
+          "oklch(84% 0.124 85.3)",
+          "oklch(95% 0.124 85.3)"
+        ]
+      },
+      "gold-page": {
+        "role": "tertiary",
+        "displayName": "Goldseite",
+        "tonalRamp": [
+          "oklch(15% 0.104 90.5)",
+          "oklch(25% 0.104 90.5)",
+          "oklch(35% 0.104 90.5)",
+          "oklch(48% 0.104 90.5)",
+          "oklch(60% 0.104 90.5)",
+          "oklch(72% 0.104 90.5)",
+          "oklch(84% 0.104 90.5)",
+          "oklch(95% 0.104 90.5)"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Papier",
+        "tonalRamp": [
+          "oklch(15% 0.000 89.9)",
+          "oklch(25% 0.000 89.9)",
+          "oklch(35% 0.000 89.9)",
+          "oklch(48% 0.000 89.9)",
+          "oklch(60% 0.000 89.9)",
+          "oklch(72% 0.000 89.9)",
+          "oklch(84% 0.000 89.9)",
+          "oklch(95% 0.000 89.9)"
+        ]
+      },
+      "cool-surface": {
+        "role": "neutral",
+        "displayName": "Kühle Fläche",
+        "tonalRamp": [
+          "oklch(15% 0.006 255.5)",
+          "oklch(25% 0.006 255.5)",
+          "oklch(35% 0.006 255.5)",
+          "oklch(48% 0.006 255.5)",
+          "oklch(60% 0.006 255.5)",
+          "oklch(72% 0.006 255.5)",
+          "oklch(84% 0.006 255.5)",
+          "oklch(95% 0.006 255.5)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Tinte",
+        "tonalRamp": [
+          "oklch(15% 0.033 260.3)",
+          "oklch(25% 0.033 260.3)",
+          "oklch(35% 0.033 260.3)",
+          "oklch(48% 0.033 260.3)",
+          "oklch(60% 0.033 260.3)",
+          "oklch(72% 0.033 260.3)",
+          "oklch(84% 0.033 260.3)",
+          "oklch(95% 0.033 260.3)"
+        ]
+      },
+      "slate-muted": {
+        "role": "neutral",
+        "displayName": "Schiefer",
+        "tonalRamp": [
+          "oklch(15% 0.034 261.3)",
+          "oklch(25% 0.034 261.3)",
+          "oklch(35% 0.034 261.3)",
+          "oklch(48% 0.034 261.3)",
+          "oklch(60% 0.034 261.3)",
+          "oklch(72% 0.034 261.3)",
+          "oklch(84% 0.034 261.3)",
+          "oklch(95% 0.034 261.3)"
+        ]
+      },
+      "field-stroke": {
+        "role": "neutral",
+        "displayName": "Feldrand",
+        "tonalRamp": [
+          "oklch(15% 0.032 259.6)",
+          "oklch(25% 0.032 259.6)",
+          "oklch(35% 0.032 259.6)",
+          "oklch(48% 0.032 259.6)",
+          "oklch(60% 0.032 259.6)",
+          "oklch(72% 0.032 259.6)",
+          "oklch(84% 0.032 259.6)",
+          "oklch(95% 0.032 259.6)"
+        ]
+      },
+      "night-paper": {
+        "role": "neutral",
+        "displayName": "Nachtpapier",
+        "tonalRamp": [
+          "oklch(15% 0.025 262.1)",
+          "oklch(25% 0.025 262.1)",
+          "oklch(35% 0.025 262.1)",
+          "oklch(48% 0.025 262.1)",
+          "oklch(60% 0.025 262.1)",
+          "oklch(72% 0.025 262.1)",
+          "oklch(84% 0.025 262.1)",
+          "oklch(95% 0.025 262.1)"
+        ]
+      },
+      "night-blue": {
+        "role": "primary",
+        "displayName": "Nachtblau",
+        "tonalRamp": [
+          "oklch(15% 0.139 260.5)",
+          "oklch(25% 0.139 260.5)",
+          "oklch(35% 0.139 260.5)",
+          "oklch(48% 0.139 260.5)",
+          "oklch(60% 0.139 260.5)",
+          "oklch(72% 0.139 260.5)",
+          "oklch(84% 0.139 260.5)",
+          "oklch(95% 0.139 260.5)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Nur der zweizeilige Seitentitel im Einstieg."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Abschnittsüberschriften, höchstens zwei Zeilen, auf breiten Bildschirmen haftend."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Unterüberschriften, Tabellengruppen, Regionsnamen; als Lead für Leitsätze."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Fließtext, höchstens 62 Zeichen je Zeile, mit Silbentrennung."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Beschriftungen, Legenden, Tabellenköpfe, Bildunterschriften, Fußzeile."
+      }
+    },
+    "shadows": [
+      {
+        "name": "sticky-bar",
+        "value": "0 10px 28px -18px rgba(14,23,38,.45)",
+        "purpose": "Haftende Kopfleiste, erst nach dem Scrollen."
+      },
+      {
+        "name": "menu-sheet",
+        "value": "0 18px 40px -20px rgba(14,23,38,.5)",
+        "purpose": "Geöffnetes Mobilmenü."
+      },
+      {
+        "name": "tooltip",
+        "value": "0 14px 34px -16px rgba(0,0,0,.55)",
+        "purpose": "Länderinfo an der Karte."
+      },
+      {
+        "name": "sticky-sum",
+        "value": "0 -12px 18px -14px rgba(14,23,38,.35)",
+        "purpose": "Haftende Summenzeile im Rechner (eigene Gewichtung)."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(.23,1,.32,1)",
+        "purpose": "Standard für Zustandswechsel, Drücken, Einblendungen."
+      },
+      {
+        "name": "ease-in-out",
+        "value": "cubic-bezier(.77,0,.175,1)",
+        "purpose": "Vorhang der Fotos und des Videos, Überblendung der Globen."
+      },
+      {
+        "name": "ease-soft",
+        "value": "cubic-bezier(.33,1,.68,1)",
+        "purpose": "Langsames Nachzoomen von Foto und Video."
+      },
+      {
+        "name": "press",
+        "value": "140ms",
+        "purpose": "scale(.97) beim Drücken."
+      },
+      {
+        "name": "hover",
+        "value": "180ms",
+        "purpose": "Farbwechsel bei Hover (nur feiner Zeiger)."
+      },
+      {
+        "name": "ui",
+        "value": "220ms",
+        "purpose": "Menüblatt, Kartenzustände, Schatten der Kopfleiste."
+      },
+      {
+        "name": "reveal",
+        "value": "800–900ms",
+        "purpose": "Einmalige Scroll-Einblendung: nur Verschiebung um 16 px, nie Ausblenden."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "tiny",
+        "value": "359px"
+      },
+      {
+        "name": "phone",
+        "value": "600px"
+      },
+      {
+        "name": "menu",
+        "value": "820px"
+      },
+      {
+        "name": "stack",
+        "value": "900px"
+      },
+      {
+        "name": "tablet",
+        "value": "1000px"
+      },
+      {
+        "name": "container",
+        "value": "1680px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primäre Schaltfläche",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Hauptaktion, z. B. „Sparsumme umrechnen“.",
+      "html": "<button class=\"ds-btn\">Sparsumme umrechnen</button>",
+      "css": ".ds-btn{font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;display:inline-flex;align-items:center;min-height:48px;padding:0 24px;border-radius:999px;border:1px solid transparent;background:#1458D6;color:#fff;font-size:15px;font-weight:600;cursor:pointer;transition:transform 140ms cubic-bezier(.23,1,.32,1),background-color 180ms ease}.ds-btn:hover{background:#0E46AE}.ds-btn:active{transform:scale(.97)}.ds-btn:focus-visible{outline:2px solid #1458D6;outline-offset:3px}"
+    },
+    {
+      "name": "Ruhige Schaltfläche",
+      "kind": "button",
+      "refersTo": "button-quiet",
+      "description": "Nebenhandlung neben einer primären Schaltfläche.",
+      "html": "<button class=\"ds-btn-quiet\">Rickmersche Vorgabe</button>",
+      "css": ".ds-btn-quiet{font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;display:inline-flex;align-items:center;min-height:48px;padding:0 24px;border-radius:999px;border:1px solid transparent;background:#F2F5F9;color:#0E1726;font-size:15px;font-weight:600;cursor:pointer;transition:transform 140ms cubic-bezier(.23,1,.32,1),background-color 180ms ease}.ds-btn-quiet:hover{background:#E6ECF4}.ds-btn-quiet:active{transform:scale(.97)}.ds-btn-quiet:focus-visible{outline:2px solid #1458D6;outline-offset:3px}"
+    },
+    {
+      "name": "Betragsfeld",
+      "kind": "input",
+      "refersTo": "input-amount",
+      "description": "Euro-Eingabe mit nachgestelltem Zeichen, Fehlerzustand über aria-invalid.",
+      "html": "<label class=\"ds-amount\">Monatsrate <span class=\"ds-money\"><input value=\"100\" inputmode=\"decimal\"></span></label>",
+      "css": ".ds-amount{font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;display:flex;align-items:center;gap:10px;font-size:15px;color:#4A5568}.ds-money{position:relative;display:inline-flex;align-items:center}.ds-money::after{content:'€';position:absolute;right:14px;color:#4A5568}.ds-money input{font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;width:118px;height:44px;padding:0 34px 0 14px;border:1px solid #7A8699;border-radius:12px;background:#fff;color:#0E1726;font-size:18px;font-weight:600;text-align:right;font-variant-numeric:tabular-nums}.ds-money input:focus{outline:2px solid #1458D6;outline-offset:2px;border-color:#1458D6}.ds-money input[aria-invalid=true]{border-color:#B4471B}"
+    },
+    {
+      "name": "Betrags-Chips",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "Beispielbeträge; ausgewählt wird zur Tintenfläche.",
+      "html": "<div class=\"ds-chips\"><button class=\"ds-chip\">50 €</button><button class=\"ds-chip\" aria-pressed=\"true\">100 €</button><button class=\"ds-chip\">250 €</button></div>",
+      "css": ".ds-chips{display:flex;gap:6px}.ds-chip{font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;min-height:44px;padding:0 16px;border-radius:999px;border:1px solid transparent;background:#F2F5F9;color:#0E1726;font-size:15px;font-weight:600;font-variant-numeric:tabular-nums;cursor:pointer;transition:background-color 180ms ease,transform 140ms cubic-bezier(.23,1,.32,1)}.ds-chip:hover{background:#E6ECF4}.ds-chip:active{transform:scale(.97)}.ds-chip[aria-pressed=true]{background:#0E1726;color:#fff}.ds-chip:focus-visible{outline:2px solid #1458D6;outline-offset:3px}"
+    },
+    {
+      "name": "Kopfleiste",
+      "kind": "nav",
+      "refersTo": "nav-link-current",
+      "description": "Wortmarke, Kapitel als Textpillen, aktuelle Stelle auf kühler Fläche.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-mark\" href=\"#\">Das Rickmersche Portfolio</a><a href=\"#\">Leitgedanke</a><a href=\"#\" aria-current=\"location\">Weltkarte</a><a href=\"#\">Bausteine</a></nav>",
+      "css": ".ds-nav{font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;display:flex;align-items:center;gap:4px;min-height:76px;padding:0 24px;background:#fff}.ds-nav a{color:#0E1726;text-decoration:none;font-size:15px;font-weight:500;padding:9px 14px;border-radius:999px;transition:background-color 180ms ease}.ds-nav a:hover{background:#F2F5F9}.ds-nav a[aria-current]{background:#F2F5F9;color:#1458D6}.ds-nav .ds-mark{font-size:18px;font-weight:600;margin-right:auto;padding:0}.ds-nav a:focus-visible{outline:2px solid #1458D6;outline-offset:3px}"
+    },
+    {
+      "name": "Flächenpanel mit Regionsbalken",
+      "kind": "card",
+      "refersTo": "panel",
+      "description": "Signatur: gestapelter Anteilsbalken mit Legende und Werten.",
+      "html": "<div class=\"ds-panel\"><h3>Wohin Ihre Monatsrate fließt</h3><div class=\"ds-stack\"><span style=\"width:34%;background:#1458D6\"></span><span style=\"width:31%;background:#5AA3F2\"></span><span style=\"width:20%;background:#008C80\"></span><span style=\"width:12%;background:#2B50B5\"></span><span style=\"width:3%;background:#B38A22\"></span></div><p>Nordamerika <b>34,5 %</b> · Europa <b>31,3 %</b> · Gold <b>3,0 %</b></p></div>",
+      "css": ".ds-panel{font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;background:#F2F5F9;border-radius:20px;padding:28px;color:#0E1726;max-width:520px}.ds-panel h3{font-size:18px;font-weight:600;margin:0}.ds-stack{display:flex;gap:3px;height:56px;margin-top:20px;border-radius:8px;overflow:hidden}.ds-stack span{display:block;height:100%}.ds-panel p{font-size:15px;margin:16px 0 0;font-variant-numeric:tabular-nums}"
+    },
+    {
+      "name": "Anteilszeile",
+      "kind": "custom",
+      "refersTo": "",
+      "description": "Zeile mit Spur, Balken und tabellarischem Wert, wie in Tabelle und Länderliste.",
+      "html": "<div class=\"ds-share\"><span class=\"ds-nm\">Xtrackers MSCI USA UCITS ETF 1D</span><span class=\"ds-trk\"><span style=\"width:83%\"></span></span><span class=\"ds-v\">30 %</span></div>",
+      "css": ".ds-share{font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;display:grid;grid-template-columns:1fr 140px 52px;align-items:center;gap:14px;padding:14px 16px;border-radius:12px;background:#F2F5F9;font-size:15px;color:#0E1726}.ds-trk{height:8px;background:#DCE3EC;border-radius:99px;overflow:hidden}.ds-trk span{display:block;height:100%;background:#1458D6;border-radius:99px}.ds-v{text-align:right;font-weight:600;font-variant-numeric:tabular-nums}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Das offene Datenblatt",
+    "overview": "Die Seite ist ein Datenblatt, das man gern liest: der Branchenstandard deutscher Finanzerklärseiten, ohne Ironie und ohne Privatbank-Pathos gespielt. Vorbilder sind die Klarheit von Finanztip und die Zurückhaltung von Trade Republic, also große Schrift, wenige Elemente und starke Bilder. Jede Zahl ist eine echte Zahl aus dem Sparplan. Was gezeigt wird, lässt sich nachrechnen.\n\nGebaut ist die Seite auf weißem Grund mit einer einzigen kühlen Flächenstufe, Tinte statt Schwarz und einem Finanzblau, das Handlung und Leitreihe zugleich ist. Den Rhythmus geben Textseiten mit fester Achse und vollflächige Farbseiten in Blau, Nachtblau und Gold. Abgegrenzt wird über Flächen, nie über Linien. Die Bildwelt besteht aus sachlichen, gemeinfreien Archivaufnahmen (NASA, The Met) und einem stummen Video, alles selbst ausgeliefert und nachgewiesen.\n\nAbgelehnt sind zwei Gegenbilder: die cremefarbene Privatbank-Broschüre mit Goldschrift, die diese Seite ersetzt, und das Dashboard aus Kennzahlkacheln und Icon-Karten.",
+    "keyCharacteristics": [
+      "Weißer Grund, eine Flächenstufe, ein Blau; Gold nur, wo Gold gemeint ist",
+      "Inter als einzige Familie, Zahlen immer tabellarisch",
+      "Textseiten auf fester Achse, dazwischen vollflächige Farbseiten",
+      "Flache Felder statt Linien, runde Schaltflächen, eckige Fotos",
+      "Bewegung ist ein Nachgeben, nie ein Verstecken",
+      "Hell und dunkel, Druck, reduzierte Bewegung und Kontrastmodus sind gleichwertig gestaltet"
+    ],
+    "rules": [
+      {
+        "name": "Die Ein-Blau-Regel",
+        "body": "Finanzblau ist die einzige Handlungsfarbe und die Leitreihe der Diagramme. Es schmückt nie, und kein zweiter Akzent tritt neben es.",
+        "section": "colors"
+      },
+      {
+        "name": "Die Gold-heißt-Gold-Regel",
+        "body": "Goldtöne erscheinen nur dort, wo physisches Gold gemeint ist. Nie als Auszeichnung, Rahmen oder „Premium“-Signal.",
+        "section": "colors"
+      },
+      {
+        "name": "Die Wert-neben-Farbe-Regel",
+        "body": "Eine Farbe in einem Diagramm steht nie allein. Wert und Name stehen daneben, damit Kontrastmodus, Druck und Farbsehschwäche nichts verlieren.",
+        "section": "colors"
+      },
+      {
+        "name": "Die Eine-Familie-Regel",
+        "body": "Inter in 400, 500 und 600, sonst nichts. Keine Monospace, keine Kapitälchen, keine gesperrten Großbuchstaben.",
+        "section": "typography"
+      },
+      {
+        "name": "Die Tabellenziffern-Regel",
+        "body": "Jede Zahl, ob Prozent, Euro oder ISIN, steht in tabellarischen Ziffern, damit Spalten und Live-Werte nicht springen.",
+        "section": "typography"
+      },
+      {
+        "name": "Die Feste-Achse-Regel",
+        "body": "Fließtext beginnt auf Textseiten immer an derselben Achse. Ausnahmen sind nur vollbreite Diagramme, Tabellen und Fotos.",
+        "section": "layout"
+      },
+      {
+        "name": "Die Flach-in-Ruhe-Regel",
+        "body": "In Ruhe hat nichts einen Schatten. Ein Schatten zeigt an, dass etwas über dem Inhalt schwebt.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** Finanzblau (#1458D6) als einzige Handlungs- und Leitfarbe einsetzen und Diagrammfarben immer mit Wert und Namen zeigen.",
+      "**Do** Fließtext auf der festen Achse ab Spalte 6 von 12 setzen und Überschriften in Spalte 1–5 haften lassen.",
+      "**Do** Bewegung nur als Nachgeben bauen: Scroll-Einblendungen verschieben um höchstens 16 px, sie verbergen nie. UI-Übergänge bleiben unter 300 ms mit `cubic-bezier(.23,1,.32,1)`, Hover nur bei feinem Zeiger.",
+      "**Do** echte, gemeinfreie oder frei lizenzierte Archivbilder verwenden, selbst ausliefern, mit `srcset` anbieten und in der Fußzeile nachweisen.",
+      "**Do** jede neue Fläche auch in Dunkelmodus, Druck, reduzierter Bewegung und Kontrastmodus prüfen."
+    ],
+    "donts": [
+      "**Don't** Kennzahlen als große Zahl über einer Beschriftung außerhalb der fünf Einstiegsfakten wiederholen. Keine Stat-Kacheln, keine Zahlen-Kicker über Überschriften.",
+      "**Don't** Eyebrows, Trennlinien, Verläufe, Glas-Effekte oder Schatten in Ruhe einsetzen.",
+      "**Don't** eine zweite Schriftfamilie, Monospace oder gesperrte Großbuchstaben verwenden.",
+      "**Don't** Gold als Schmuckfarbe einsetzen oder die cremefarbene Privatbank-Anmutung zurückholen.",
+      "**Don't** Inhalte mit `opacity: 0` hinter einem Scroll-Beobachter verstecken.",
+      "**Don't** Motive aus Herkunft oder Bedeutung des Namens aufgreifen, und keine Bilder, die als eigene Aufnahmen erscheinen."
+    ]
+  }
+}

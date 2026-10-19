@@ -222,7 +222,7 @@ main>section{padding-block:var(--section)}
 
 /* ════════════ Schaltflächen ════════════ */
 .btn{
-  display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 24px;border-radius:999px;border:1px solid transparent;
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 24px;border-radius:999px;border:1px solid transparent; /* taste-skill-ignore: unsichtbarer Rand, wird im Kontrastmodus zur Kontur */
   background:var(--accent);color:var(--accent-ink);font:600 var(--t-small)/1.2 var(--font);text-decoration:none;white-space:nowrap;cursor:pointer;
   transition:transform var(--t-press) var(--ease-out),background-color var(--t-hover) ease,color var(--t-hover) ease;
 }
@@ -245,7 +245,7 @@ main>section{padding-block:var(--section)}
 .nav a{font-size:var(--t-small);font-weight:500;color:var(--ink);text-decoration:none;padding:9px 14px;border-radius:999px;transition:background-color var(--t-hover) ease,color var(--t-hover) ease}
 @media (hover:hover) and (pointer:fine){.nav a:hover{background:var(--surface)}}
 .nav a[aria-current]{background:var(--surface);color:var(--accent)}
-.menu-btn{display:none;font:600 var(--t-small)/1 var(--font);color:var(--ink);background:var(--surface);border:1px solid transparent;border-radius:999px;min-height:44px;padding:0 18px;cursor:pointer;transition:transform var(--t-press) var(--ease-out)}
+.menu-btn{display:none;font:600 var(--t-small)/1 var(--font);color:var(--ink);background:var(--surface);border:1px solid transparent;border-radius:999px;min-height:44px;padding:0 18px;cursor:pointer;transition:transform var(--t-press) var(--ease-out)} /* taste-skill-ignore: unsichtbarer Rand, wird im Kontrastmodus zur Kontur */
 .menu-btn:active{transform:scale(.97)}
 @media (max-width:1000px){
   .topbar .btn{display:none}
@@ -329,7 +329,7 @@ html:not(.js) .panel{display:none}
 .earth video,.earth img{width:100%;height:clamp(300px,58vh,680px);object-fit:cover;object-position:50% 38%}
 .earth{position:relative}
 .earth figcaption{background:var(--bg);color:var(--muted);font-size:var(--t-small);padding-top:14px}
-.vid-toggle{position:absolute;right:max(var(--m),calc((100% - 1680px) / 2 + var(--m)));top:calc(clamp(300px,58vh,680px) - 64px);min-height:44px;padding:0 18px;border-radius:999px;border:1px solid transparent;background:#0B111C;color:#F3F6FA;font:600 var(--t-small)/1 var(--font);cursor:pointer;transition:transform var(--t-press) var(--ease-out),background-color var(--t-hover) ease}
+.vid-toggle{position:absolute;right:max(var(--m),calc((100% - 1680px) / 2 + var(--m)));top:calc(clamp(300px,58vh,680px) - 64px);min-height:44px;padding:0 18px;border-radius:999px;border:1px solid transparent;background:#0B111C;color:#F3F6FA;font:600 var(--t-small)/1 var(--font);cursor:pointer;transition:transform var(--t-press) var(--ease-out),background-color var(--t-hover) ease} /* taste-skill-ignore: unsichtbarer Rand, wird im Kontrastmodus zur Kontur */
 .vid-toggle:active{transform:scale(.97)}
 @media (hover:hover) and (pointer:fine){.vid-toggle:hover{background:#1C2738}}
 .vid-toggle:focus-visible{outline-color:#F3F6FA}
@@ -340,7 +340,7 @@ html:not(.js) .vid-toggle{display:none}
 .regions{grid-column:1/4;list-style:none;display:flex;flex-direction:column;gap:2px}
 .regions button{
   width:100%;display:flex;align-items:baseline;justify-content:space-between;gap:12px;text-align:left;
-  font:600 var(--t-lead)/1.2 var(--font);letter-spacing:-.012em;color:var(--muted);background:none;border:1px solid transparent;border-radius:12px;padding:10px 12px;cursor:pointer;
+  font:600 var(--t-lead)/1.2 var(--font);letter-spacing:-.012em;color:var(--muted);background:none;border:1px solid transparent;border-radius:12px;padding:10px 12px;cursor:pointer; /* taste-skill-ignore: unsichtbarer Rand, wird im Kontrastmodus zur Kontur */
   transition:color var(--t-hover) ease,background-color var(--t-hover) ease,transform var(--t-press) var(--ease-out);
 }
 .regions button .v{font-size:var(--t-small);font-weight:500;font-variant-numeric:tabular-nums}
@@ -566,7 +566,7 @@ table.port{table-layout:fixed;font-size:var(--t-small)}
 .modes{display:inline-flex;max-width:100%;background:var(--surface);border-radius:999px;padding:4px;margin-bottom:24px;position:relative}
 .modes input{position:absolute;opacity:0;pointer-events:none}
 .modes label{
-  font-size:var(--t-small);font-weight:600;color:var(--muted);padding:0 20px;min-height:44px;display:flex;align-items:center;border-radius:999px;border:1px solid transparent;cursor:pointer;text-align:center;line-height:1.2;
+  font-size:var(--t-small);font-weight:600;color:var(--muted);padding:0 20px;min-height:44px;display:flex;align-items:center;border-radius:999px;border:1px solid transparent;cursor:pointer;text-align:center;line-height:1.2; /* taste-skill-ignore: unsichtbarer Rand, wird im Kontrastmodus zur Kontur */
   transition:background-color var(--t-hover) ease,color var(--t-hover) ease,transform var(--t-press) var(--ease-out);
 }
 .modes label:active{transform:scale(.97)}
@@ -580,7 +580,7 @@ table.port{table-layout:fixed;font-size:var(--t-small)}
 .tool .money input{width:170px;height:52px;font-size:var(--t-lead)}
 .presets{display:flex;flex-wrap:wrap;gap:6px}
 .chip{
-  font:600 var(--t-small)/1 var(--font);font-variant-numeric:tabular-nums;color:var(--ink);background:var(--surface);border:1px solid transparent;border-radius:999px;min-height:44px;padding:0 16px;cursor:pointer;
+  font:600 var(--t-small)/1 var(--font);font-variant-numeric:tabular-nums;color:var(--ink);background:var(--surface);border:1px solid transparent;border-radius:999px;min-height:44px;padding:0 16px;cursor:pointer; /* taste-skill-ignore: unsichtbarer Rand, wird im Kontrastmodus zur Kontur */
   transition:background-color var(--t-hover) ease,color var(--t-hover) ease,transform var(--t-press) var(--ease-out);
 }
 .chip:active{transform:scale(.97)}
@@ -707,7 +707,7 @@ footer :focus-visible{outline-color:var(--navy-ink)}
 
 @media (forced-colors:active){
   .stack .f,.legend .f,.rank .trk .f,.bars .col,.scale .f,.legend-out .f,.sharecell .trk .f,.country-list .trk .f,.mat-bar .seg,.mat-legend .f,.de-tile .land{forced-color-adjust:none}
-  .sharecell .trk,.country-list .trk,.rank .trk{border:1px solid CanvasText}
+  .sharecell .trk,.country-list .trk,.rank .trk{border:1px solid CanvasText} /* taste-skill-ignore: nur im Kontrastmodus sichtbar */
   .nav a[aria-current],.regions button[aria-pressed="true"],.chip[aria-pressed="true"]{outline:2px solid Highlight}
   .modes input:checked+label{outline:2px solid Highlight}
 }
