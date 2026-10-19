@@ -1,0 +1,4 @@
+# GitHub Pages: Projekt-Dokumentation nicht als Webseiten veröffentlichen
+exclude:
+  - PRODUCT.md
+  - DESIGN.md

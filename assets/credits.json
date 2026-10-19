@@ -1,0 +1,47 @@
+[
+  {
+    "file": "erde-iss-loop.webm, erde-iss-loop.mp4, erde-iss-poster.jpg",
+    "title": "Earth Views from the International Space Station",
+    "creator": "NASA HQ",
+    "date": "2019-04-30",
+    "licence": "public domain (NASA media guidelines)",
+    "source": "https://images.nasa.gov/details/Earth%20Views%20from%20the%20International%20Space%20Station",
+    "edit": "13,3-Sekunden-Ausschnitt ab 0:13,5 aus der Originalfassung, nahtlose Überblendung, ohne Ton, 1280 × 720; Standbild als Poster"
+  },
+  {
+    "file": "europa-nacht.jpg, europa-nacht-960.jpg",
+    "title": "ISS029-E-021987 – Mitteleuropa bei Nacht",
+    "creator": "NASA / Mike Fossum (Expedition 29)",
+    "date": "2011-10-02",
+    "licence": "public domain (NASA media guidelines)",
+    "source": "https://images.nasa.gov/details/iss029e021987",
+    "edit": "Ausschnitt 16:10, verkleinert auf 1920 × 1200 und 960 × 600"
+  },
+  {
+    "file": "erde-nacht-atlantik.jpg",
+    "title": "Black Marble – City Lights 2012",
+    "creator": "NASA Goddard Space Flight Center",
+    "date": "2012",
+    "licence": "public domain (NASA media guidelines)",
+    "source": "https://images.nasa.gov/details/GSFC_20171208_Archive_e001593",
+    "edit": "quadratischer Ausschnitt um den Globus, 900 × 900"
+  },
+  {
+    "file": "erde-nacht-europa-afrika.jpg",
+    "title": "Black Marble – Africa, Europe, and the Middle East",
+    "creator": "NASA Goddard Space Flight Center",
+    "date": "2012",
+    "licence": "public domain (NASA media guidelines)",
+    "source": "https://images.nasa.gov/details/GSFC_20171208_Archive_e001591",
+    "edit": "quadratischer Ausschnitt, Erdscheibe gleich groß wie beim Atlantik-Bild, 900 × 900"
+  },
+  {
+    "file": "goldbarren-fragment.jpg, goldbarren-fragment-900.jpg, goldbarren-fragment-dunkel.jpg, goldbarren-fragment-dunkel-900.jpg",
+    "title": "Fragment of a Gold Ingot",
+    "creator": "Avar maker (The Metropolitan Museum of Art, object 464088)",
+    "date": "700s",
+    "licence": "CC0 (The Met Open Access)",
+    "source": "https://www.metmuseum.org/art/collection/search/464088",
+    "edit": "Objekt vom grauen Studiohintergrund freigestellt, Hintergrund in der Seitenfarbe (hell #E6CF98, dunkel #372C15), Ausschnitt 8:3 um das Objekt, 1600 × 600 und 900 × 338 px. Das Objekt selbst ist unverändert."
+  }
+]
