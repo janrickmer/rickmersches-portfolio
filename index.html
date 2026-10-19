@@ -291,7 +291,7 @@ main>section{padding-block:var(--section)}
 .money{position:relative;display:inline-flex;align-items:center}
 .money input{
   font:600 var(--t-body)/1 var(--font);font-variant-numeric:tabular-nums;color:var(--ink);background:var(--bg);
-  width:118px;height:44px;padding:0 34px 0 14px;border:1px solid var(--field-border);border-radius:var(--r-field);text-align:right; /* taste-skill-ignore: Formularfeld */
+  width:calc(7.75ch + 50px);height:44px;padding:0 34px 0 14px;border:1px solid var(--field-border);border-radius:var(--r-field);text-align:right; /* taste-skill-ignore: Formularfeld */
   transition:border-color var(--t-hover) ease;
 }
 .money::after{content:"€";position:absolute;right:14px;color:var(--muted);font-weight:500;pointer-events:none}
@@ -307,20 +307,20 @@ html:not(.js) .panel{display:none}
 .legend .v{font-weight:600;font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
 .legend .e{grid-column:2/4;color:var(--muted);font-variant-numeric:tabular-nums;margin-top:-2px}
 .panel h3{font-size:var(--t-body);line-height:1.3;margin-top:28px;letter-spacing:-.01em}
-.rank{list-style:none;margin-top:10px;font-size:var(--t-small)}
-.rank li{display:grid;grid-template-columns:minmax(96px,128px) minmax(0,1fr) auto;align-items:center;gap:14px;min-height:30px}
+.rank{list-style:none;margin-top:10px;font-size:var(--t-small);display:grid;grid-template-columns:minmax(96px,128px) minmax(0,1fr) auto auto;column-gap:14px}
+.rank li{grid-column:1/-1;display:grid;grid-template-columns:subgrid;align-items:center;min-height:30px}
 .rank .trk{height:12px}
 .rank .trk .f{display:block;height:100%;background:var(--accent);border-radius:0 4px 4px 0;transform-origin:left center}
 .rank .v{text-align:right;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap}
 .panel-note{font-size:var(--t-small);color:var(--muted);margin-top:16px}
-.rank .v small{font-weight:400;color:var(--muted);font-size:inherit;margin-left:8px}
+.rank .e{font-weight:400;color:var(--muted);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
 @media (max-width:1249px){
   .facts{display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:22px clamp(16px,4vw,44px)}
   .facts>div:nth-child(2){grid-column:2/span 2}
   .facts dt{hyphens:auto;-webkit-hyphens:auto}
 }
 @media (max-width:339px){.legend li{column-gap:6px}}
-@media (max-width:359px){.hero h1{font-size:2.3rem}.facts{grid-template-columns:repeat(2,auto)}.facts>div:nth-child(2){grid-column:auto}.facts>div:nth-child(5){grid-column:1/-1}}
+@media (max-width:22.4375em){.hero h1{font-size:2.3rem}.facts{grid-template-columns:repeat(2,auto)}.facts>div:nth-child(2){grid-column:auto}.facts>div:nth-child(5){grid-column:1/-1}}
 @media (min-width:1001px) and (max-width:1249px){
   .legend{grid-template-columns:1fr;grid-auto-flow:row;grid-template-rows:none;row-gap:6px}
   .legend .e{grid-column:auto;margin:0;text-align:right}
@@ -336,15 +336,16 @@ html:not(.js) .panel{display:none}
   .legend{grid-template-columns:1fr;grid-auto-flow:row;grid-template-rows:none;row-gap:6px}
   .legend .e{grid-column:auto;margin:0;text-align:right}
   .legend li{grid-template-columns:12px minmax(0,1fr) auto auto}
-  .rank li{grid-template-columns:minmax(0,1fr) auto;row-gap:6px;padding-bottom:12px}
+  .rank{grid-template-columns:minmax(0,1fr) auto auto}
+  .rank li{row-gap:6px;padding-bottom:12px}
   .rank .trk{grid-column:1/-1;grid-row:2}
   .act .textlink{display:none}
 }
-@media (min-width:360px) and (max-width:600px),(min-width:1001px) and (max-width:1249px){
+@media (min-width:22.5em) and (max-width:600px),(min-width:1001px) and (max-width:1249px){
   .legend{grid-template-columns:12px minmax(0,1fr) auto auto;column-gap:10px}
   .legend li{grid-column:1/-1;grid-template-columns:subgrid}
 }
-@media (max-width:359px){
+@media (max-width:22.4375em){
   .legend{grid-template-columns:12px minmax(0,1fr) auto;column-gap:8px}
   .legend li{grid-column:1/-1;grid-template-columns:subgrid}
   .legend .e{grid-column:2/-1;margin-top:-2px;text-align:left}
@@ -414,7 +415,6 @@ html:not(.js) .vid-toggle{display:none}
 .country-list li.dim{opacity:.38}
 .country-list .trk{height:6px;background:var(--track);border-radius:99px;overflow:hidden}
 .country-list .trk .f{display:block;height:100%;background:var(--accent);border-radius:99px;min-width:3px}
-.country-list abbr{text-decoration:none}
 .country-list .pc{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
 .method{margin-top:28px;max-width:64ch;font-size:var(--t-small);color:var(--muted)}
 @media (max-width:1000px){
@@ -695,7 +695,7 @@ p.sec-body{max-width:52ch}
   .presets{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));width:100%}
   .chip{padding:0 4px}
   .wtable,.wtable thead,.wtable tbody,.wtable tfoot{display:block}
-  .wtable tr{display:grid;grid-template-columns:minmax(0,1fr) var(--wcol,60px) 100px 64px;align-items:baseline;border-radius:10px}
+  .wtable tr{display:grid;grid-template-columns:minmax(0,1fr) var(--wcol,60px) 100px minmax(64px,84px);align-items:baseline;border-radius:10px}
   .tool[data-mode="own"] .wtable tr{--wcol:68px}
   .wtable th .lg{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
   .wtable th .sh{display:inline}
@@ -778,14 +778,17 @@ footer :focus-visible{outline-color:var(--navy-ink)}
   .maturity .s-dm{background:#1458D6}
   .gold-photo img{max-height:none}
   h2,h3{break-after:avoid}
-  .facts,.sec-head,.alloc-top{break-inside:avoid}
-  .country-list,.country-list li,table tr,.reasons li,.gold-facts article,figure{break-inside:avoid}
+  .facts,.sec-head,.alloc-top,#allokation>.wrap+.wrap{break-inside:avoid}
+  #bausteine .sec-head{break-after:avoid}
+  .country-list,.country-list li,table tr,.reasons li,.gold-facts article,figure,.method,.foot-cols p{break-inside:avoid}
+  .country-list li{padding-block:5px}
   .list-head,.port tr.grp-row{break-after:avoid}
-  #rebalancing>.sec-head{break-inside:auto}#rebalancing .rules,#rebalancing .aside-note{break-inside:avoid}
-  .tool[data-mode="own"] .wtable tfoot,.tool[data-mode="own"] .wtable tfoot td{position:static}
+  #rebalancing>.sec-head{break-inside:auto;display:flex;flex-direction:column;align-items:stretch}#rebalancing .rules,#rebalancing .aside-note{break-inside:avoid}
+  .tool[data-mode="own"] .wtable tfoot,.tool[data-mode="own"] .wtable tfoot td{position:static;box-shadow:none}
   .stack .f,.legend .f,.rank .trk .f,.mat-bar .seg,.mat-legend .f,.bars .col,.scale .f,.sharecell .trk .f,.country-list .trk .f,.de-tile,#worldmap path,#worldmap circle{-webkit-print-color-adjust:exact;print-color-adjust:exact}
   a{color:inherit;text-decoration:none}
 }
+@media print and (min-width:481px){.wtable tfoot{display:table-row-group}}
 </style>
 </head>
 <body>
@@ -1018,7 +1021,7 @@ const REGIONS=(()=>{
   const max=top[0][1];
   // einmal aufbauen; eine neue Monatsrate ändert nur die Eurobeträge
   legend.innerHTML=REGIONS.map(r=>`<li><span class="f" style="background:var(${REGION_VAR[r.l]})"></span><span>${esc(r.l)}</span><span class="v">${fmtPct(r.v,1)}</span><span class="e"></span></li>`).join("");
-  rank.innerHTML=top.map(([iso,p])=>`<li><span>${esc(NAMES[iso])}</span><span class="trk" aria-hidden="true"><span class="f" style="width:${(p/max*100).toFixed(1)}%"></span></span><span class="v">${fmtPct(p,1)}<small class="e"></small></span></li>`).join("");
+  rank.innerHTML=top.map(([iso,p])=>`<li><span>${esc(NAMES[iso])}</span><span class="trk" aria-hidden="true"><span class="f" style="width:${(p/max*100).toFixed(1)}%"></span></span><span class="v">${fmtPct(p,1)}</span><small class="e"></small></li>`).join("");
   const legE=[...legend.querySelectorAll(".e")],rankE=[...rank.querySelectorAll(".e")];
   function render(b){
     REGIONS.forEach((r,i)=>{legE[i].textContent=fmtEUR(b*r.v/100);});
@@ -2904,7 +2907,7 @@ const mapApi=(function paintMap(){
   rows.forEach(([iso,p],i)=>{
     const li=document.createElement("li");
     li.dataset.iso=iso;
-    li.innerHTML=`<span class="nm">${iso==="ae"?'<abbr title="Vereinigte Arabische Emirate">VAE</abbr>':esc(NAMES[iso]||iso)}</span>`+
+    li.innerHTML=`<span class="nm">${iso==="ae"?'<span aria-hidden="true" title="Vereinigte Arabische Emirate">VAE</span><span class="sr-only">Vereinigte Arabische Emirate</span>':esc(NAMES[iso]||iso)}</span>`+
       `<span class="trk" aria-hidden="true"><span class="f" style="width:${Math.max(2,p/max*100).toFixed(1)}%;--i:${Math.min(i,30)}"></span></span>`+
       `<span class="pc">${pctLabel(p)}</span>`;
     li.addEventListener("pointerenter",ev=>{if(ev.pointerType==="mouse")mapApi.highlight(iso,true);});
