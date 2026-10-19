@@ -253,6 +253,7 @@ main>section{padding-block:var(--section)}
 }
 @media (max-width:820px){
   html.js{scroll-padding-top:64px}
+  html:not(.js) .topbar{position:static}
   .topbar-in{min-height:64px;flex-wrap:wrap}
   .js .menu-btn{display:inline-flex;align-items:center}
   .nav{width:100%;flex-wrap:wrap;padding-bottom:10px}
@@ -317,6 +318,7 @@ html:not(.js) .panel{display:none}
   .facts>div:nth-child(2){grid-column:2/span 2}
   .facts dt{hyphens:auto;-webkit-hyphens:auto}
 }
+@media (max-width:339px){.legend li{column-gap:6px}}
 @media (max-width:359px){.hero h1{font-size:2.3rem}.facts{grid-template-columns:repeat(2,auto)}.facts>div:nth-child(2){grid-column:auto}.facts>div:nth-child(5){grid-column:1/-1}}
 @media (min-width:1001px) and (max-width:1249px){
   .legend{grid-template-columns:1fr;grid-auto-flow:row;grid-template-rows:none;row-gap:6px}
@@ -393,9 +395,9 @@ html:not(.js) .vid-toggle{display:none}
 .list-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px 24px;margin-top:clamp(56px,6vw,88px)}
 .list-head h3{font-size:var(--t-lead)}
 .list-head span{font-size:var(--t-small);color:var(--muted)}
-.country-list{list-style:none;column-count:3;column-gap:var(--g);margin-top:18px}
+.country-list{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-flow:column;grid-template-rows:repeat(var(--rows3,17),auto);column-gap:var(--g);margin-top:18px}
 .country-list li{
-  break-inside:avoid;display:grid;grid-template-columns:minmax(0,1fr) 64px 64px;align-items:center;gap:12px;
+  break-inside:avoid;display:grid;grid-template-columns:minmax(min-content,1fr) minmax(24px,64px) 64px;align-items:center;gap:12px;
   padding:7px 10px;border-radius:10px;font-size:var(--t-small);transition:background-color var(--t-hover) ease,opacity var(--t-ui) ease;
 }
 .country-list li.hl{background:var(--surface)}
@@ -411,15 +413,16 @@ html:not(.js) .vid-toggle{display:none}
   .regions button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
   .regions .hint{width:100%;padding:6px 2px 0}
   .stage{grid-column:1/-1}
-  .country-list{column-count:2}
+  .country-list{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(var(--rows,25),auto)}
 }
 @media (max-width:600px){
   /* zwei Spalten mit gemeinsamen Zeilen: ein umbrechender Name verschiebt die Nachbarspalte nicht */
-  .country-list{column-count:auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-auto-flow:column;grid-template-rows:repeat(var(--rows,25),auto);column-gap:20px}
-  .country-list li{grid-template-columns:minmax(0,1fr) auto;align-items:baseline;gap:10px;padding:7px 6px}
+  .country-list{column-gap:16px}
+  .country-list li{grid-template-columns:minmax(0,1fr) auto;align-items:baseline;gap:10px;padding:7px 4px}
   .country-list .trk{display:none}
 }
-@media (max-width:389px){
+@media (min-width:360px) and (max-width:389px){.country-list{column-gap:12px}.country-list li{padding:7px 0;gap:6px}}
+@media (max-width:359px){
   .country-list{grid-template-columns:minmax(0,1fr);grid-auto-flow:row;grid-template-rows:none}
 }
 
@@ -440,7 +443,7 @@ html:not(.js) .vid-toggle{display:none}
 .mat-legend{list-style:none;display:flex;flex-wrap:wrap;gap:8px 28px;margin-top:14px;font-size:var(--t-small)}
 .mat-legend li{display:flex;align-items:center;gap:10px}
 .mat-legend .f{display:block;width:12px;height:12px;border-radius:3px}
-.mat-legend b{font-size:var(--t-lead);font-weight:600;font-variant-numeric:tabular-nums}
+.mat-legend b{display:inline-block;min-width:4.2em;font-size:var(--t-lead);font-weight:600;font-variant-numeric:tabular-nums}
 .regions-cap{margin-top:clamp(48px,6vw,80px)}
 .bars{flex:1;display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px;align-items:end;padding-inline:0;min-height:46vh}
 .bars li{list-style:none;display:flex;flex-direction:column;justify-content:flex-end;height:100%}
@@ -499,6 +502,10 @@ table.port{table-layout:fixed;font-size:var(--t-small)}
   .port tfoot tr{display:flex;justify-content:space-between}
   .port tfoot td{width:auto;padding:18px 14px 0}
 }
+@media (max-width:359px){
+  .port td.isin{grid-column:1/-1}
+  .port td.share{grid-column:1/-1;grid-row:auto;width:auto}
+}
 
 /* ════════════ Begründung (Farbseite) ════════════ */
 .field-navy{background:var(--navy);color:var(--navy-ink)}
@@ -547,7 +554,7 @@ table.port{table-layout:fixed;font-size:var(--t-small)}
   .anchor-photo,.anchor-side,.anchor-text{grid-column:1/-1;grid-row:auto}
   .anchor-side{display:grid;grid-template-columns:1fr;gap:24px}
   .de-tile{aspect-ratio:auto;min-height:320px}
-  .de-tile svg{flex:none;height:clamp(300px,48vh,440px)}
+  .de-tile svg{flex:none;width:100%;height:auto;aspect-ratio:30/38;max-height:clamp(300px,48vh,440px)}
   .facts-2{grid-template-columns:repeat(4,minmax(0,1fr))}
   .note-panel h3,.note-panel p{grid-column:1/-1}
 }
@@ -646,6 +653,16 @@ p.sec-body{max-width:52ch}
 .tool[data-mode="own"] .wtable tfoot td{position:sticky;bottom:0;z-index:1;box-shadow:0 -12px 18px -14px rgba(var(--shadow-rgb),.35)} /* taste-skill-ignore: haftende Summenzeile */
 .hint{font-size:var(--t-small);color:var(--warn);margin-top:14px;line-height:1.5}
 .hint:empty{margin:0}
+@media screen and (min-width:1001px){
+  .tool{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:clamp(32px,4vw,64px);align-items:start;grid-template-areas:"modes modes" "title title" "lede ctl" "lede act" "table table" "hint hint"}
+  .tool>.modes{grid-area:modes;justify-self:start}
+  .tool>.mode-title{grid-area:title}
+  .tool>.mode-lede{grid-area:lede}
+  .tool>.controls{grid-area:ctl}
+  .tool>.own-actions{grid-area:act;margin-top:0}
+  .tool>.wtable{grid-area:table}
+  .tool>.hint{grid-area:hint}
+}
 @media (max-width:640px){
   .modes{display:flex;width:100%}
   .modes label{flex:1;justify-content:center;padding:0 10px}
@@ -662,7 +679,7 @@ p.sec-body{max-width:52ch}
   .presets{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));width:100%}
   .chip{padding:0 4px}
   .wtable,.wtable thead,.wtable tbody,.wtable tfoot{display:block}
-  .wtable tr{display:grid;grid-template-columns:minmax(0,1fr) var(--wcol,52px) 100px 64px;align-items:baseline;border-radius:10px}
+  .wtable tr{display:grid;grid-template-columns:minmax(0,1fr) var(--wcol,60px) 100px 64px;align-items:baseline;border-radius:10px}
   .tool[data-mode="own"] .wtable tr{--wcol:68px}
   .wtable th .lg{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
   .wtable th .sh{display:inline}
@@ -720,6 +737,7 @@ footer :focus-visible{outline-color:var(--navy-ink)}
 }
 
 @media (forced-colors:active){
+  .maturity .s-dm{background:CanvasText}
   .stack .f,.legend .f,.rank .trk .f,.bars .col,.scale .f,.legend-out .f,.sharecell .trk .f,.country-list .trk .f,.mat-bar .seg,.mat-legend .f,.de-tile .land{forced-color-adjust:none}
   .sharecell .trk,.country-list .trk,.rank .trk{border:1px solid CanvasText} /* taste-skill-ignore: nur im Kontrastmodus sichtbar */
   .nav a[aria-current],.regions button[aria-pressed="true"],.chip[aria-pressed="true"]{outline:2px solid Highlight}
@@ -730,7 +748,7 @@ footer :focus-visible{outline-color:var(--navy-ink)}
 @media print{
   :root{color-scheme:light}
   body{background:#fff;color:#000;font-size:10.5pt}
-  .topbar,.skip,#tooltip,.modes,.controls,.own-actions,.earth,.regions,.act,.amount,.amount-err,.wordmark,.globes,.globe-cap{display:none!important}
+  .topbar,.skip,#tooltip,.modes,.controls,.own-actions,.earth,.regions,.act,.amount,.amount-err,.wordmark,.globes,.globe-cap,#maphint{display:none!important}
   main>section{padding-block:22pt}
   .alloc{min-height:0}
   .field-blue,.field-navy,.field-gold,footer,.why-head,.tool{background:#fff!important;color:#000!important}
@@ -739,9 +757,12 @@ footer :focus-visible{outline-color:var(--navy-ink)}
   .js [data-rise],.js .hero h1 .line>span,.js .hero .stack,.js .rank .trk .f,.js .bars .col{opacity:1!important;transform:none!important;clip-path:none!important;animation:none!important;transition:none!important}
   .mosaic{display:block}
   .anchor-side{margin-top:14pt}
-  .de-tile{aspect-ratio:auto;max-width:55%}
+  .de-tile{aspect-ratio:auto;max-width:55%;break-inside:avoid}
+  .de-tile svg{height:auto;aspect-ratio:30/38;max-height:9cm}
+  .maturity .s-dm{background:#1458D6}
   .gold-photo img{max-height:none}
   h2,h3{break-after:avoid}
+  .facts,.sec-head,.alloc-top{break-inside:avoid}
   .country-list li,table tr,.reasons li,.gold-facts article,figure{break-inside:avoid}
   .tool[data-mode="own"] .wtable tfoot,.tool[data-mode="own"] .wtable tfoot td{position:static}
   .stack .f,.legend .f,.rank .trk .f,.mat-bar .seg,.mat-legend .f,.bars .col,.scale .f,.sharecell .trk .f,.country-list .trk .f,.de-tile,#worldmap path,#worldmap circle{-webkit-print-color-adjust:exact;print-color-adjust:exact}
@@ -2535,7 +2556,7 @@ const REGIONS=(()=>{
         zwischen Sparer und Barren.</p>
       </article>
       <article>
-        <h3>Lieferanspruch &amp; Steuerprofil</h3>
+        <h3>Lieferanspruch&nbsp;&amp; Steuerprofil</h3>
         <p>Anleger haben einen <strong>Anspruch auf physische Auslieferung</strong> des Goldes.
         Gewinne aus physisch besicherten Gold-ETCs mit Lieferanspruch werden nach gefestigter
         BFH-Rechtsprechung wie Gewinne aus Barrengold behandelt: Nach mehr als
@@ -2647,7 +2668,7 @@ const REGIONS=(()=>{
       </div>
       <div>
         <h2>Bildnachweise</h2>
-        <p id="credits">Video: <a href="https://images.nasa.gov/details/Earth%20Views%20from%20the%20International%20Space%20Station">„Earth Views from the International Space Station“</a>, NASA, gemeinfrei. Fotos: <a href="https://images.nasa.gov/details/iss029e021987">ISS029-E-021987</a>, Mitteleuropa bei Nacht, NASA/Mike Fossum, gemeinfrei; <a href="https://images.nasa.gov/details/GSFC_20171208_Archive_e001593">„Black Marble – City Lights 2012“</a> und <a href="https://images.nasa.gov/details/GSFC_20171208_Archive_e001591">„Black Marble – Africa, Europe, and the Middle East“</a>, NASA Goddard Space Flight Center, gemeinfrei; <a href="https://www.metmuseum.org/art/collection/search/464088">„Fragment of a Gold Ingot“</a>, awarisch, 8.&nbsp;Jh., The Metropolitan Museum of Art, CC0, vom Hintergrund freigestellt. Die NASA steht in keiner Verbindung zu dieser Seite und unterstützt sie nicht.</p>
+        <p id="credits">Video: <a href="https://images.nasa.gov/details/Earth%20Views%20from%20the%20International%20Space%20Station">„Earth Views from the International Space Station“</a>, NASA, gemeinfrei. Fotos: <a href="https://images.nasa.gov/details/iss029e021987">ISS029-E-021987</a>, Mitteleuropa bei Nacht, NASA/Mike Fossum, gemeinfrei; <a href="https://images.nasa.gov/details/GSFC_20171208_Archive_e001593">„Black Marble&nbsp;– City Lights 2012“</a> und <a href="https://images.nasa.gov/details/GSFC_20171208_Archive_e001591">„Black Marble&nbsp;– Africa, Europe, and the Middle East“</a>, NASA Goddard Space Flight Center, gemeinfrei; <a href="https://www.metmuseum.org/art/collection/search/464088">„Fragment of a Gold Ingot“</a>, awarisch, 8.&nbsp;Jh., The Metropolitan Museum of Art, CC0, vom Hintergrund freigestellt. Die NASA steht in keiner Verbindung zu dieser Seite und unterstützt sie nicht.</p>
       </div>
       <div>
         <h2>Rechtliches</h2>
@@ -2742,7 +2763,7 @@ const REGIONS=(()=>{
       tr.className="row"+(e.grp==="GOLD"?" gold":"");
       tr.innerHTML=
         `<td class="nm">${esc(e.name).replace(/ (\S+)$/," $1")}${e.de?"":' <span class="tag">Amundi · FR</span>'}</td>`+
-        `<td class="ctry">${esc(e.region)}</td>`+
+        `<td class="ctry">${esc(e.region).replace(/ ([—–])/g,"\u00a0$1")}</td>`+
         `<td class="isin">${e.isin}</td>`+
         `<td class="share"><div class="sharecell"><span class="trk" aria-hidden="true"><span class="f" style="--w:${(e.rate/max*100).toFixed(1)}%;--i:${n++}"></span></span><span class="num">${e.rate} %</span></div></td>`;
       tb.appendChild(tr);
@@ -2765,7 +2786,7 @@ const mapApi=(function paintMap(){
   const listRow=iso=>document.querySelector(`#countrylist li[data-iso="${iso}"]`);
   function highlight(iso,on){
     const el=paths[iso];
-    if(el){el.classList.toggle("hl",on);if(on)svg.insertBefore(el,svg.querySelector("circle"));}
+    if(el){el.classList.toggle("hl",on);if(on)svg.insertBefore(el,svg.querySelector("circle.dot"));}
     if(dots[iso]){dots[iso].classList.toggle("hl",on);if(on)svg.appendChild(dots[iso]);}
     const row=listRow(iso);if(row)row.classList.toggle("hl",on);
   }
@@ -2822,6 +2843,8 @@ const mapApi=(function paintMap(){
       t.addEventListener("click",ev=>{ev.stopPropagation();show(iso,ev.clientX,ev.clientY);});
     }
   }
+  const firstDot=svg.querySelector("circle.dot");
+  for(const [iso,el] of Object.entries(paths)) if(!dots[iso]) svg.insertBefore(el,firstDot);
   document.addEventListener("keydown",ev=>{if(ev.key==="Escape")hide();});
   document.addEventListener("click",hide);
   addEventListener("scroll",()=>{if(tip.classList.contains("on"))hide();},{passive:true});
@@ -2859,6 +2882,7 @@ const mapApi=(function paintMap(){
   const rows=Object.entries(SHARES).sort((a,b)=>b[1]-a[1]);
   const max=rows[0][1];
   host.style.setProperty("--rows",Math.ceil(rows.length/2));
+  host.style.setProperty("--rows3",Math.ceil(rows.length/3));
   rows.forEach(([iso,p],i)=>{
     const li=document.createElement("li");
     li.dataset.iso=iso;
