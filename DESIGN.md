@@ -189,7 +189,7 @@ Eine kühle, nüchterne Palette: Papierweiß, ein Hauch Blaugrau als Fläche, ti
 - **Display** (600, clamp 2,6–5,5 rem, 1,0): Nur der Seitentitel im Einstieg, zweizeilig.
 - **Headline** (600, clamp 1,875–2,75 rem, 1,08): Abschnittsüberschriften, höchstens zwei Zeilen, auf breiten Bildschirmen haftend in der linken Spalte.
 - **Title** (600, clamp 1,25–1,5 rem, 1,25): Unterüberschriften, Gruppenzeilen der Tabelle, Regionsnamen an der Karte. Als Lead-Text (500, 1,38) für Leitsätze.
-- **Body** (400, 1,125 rem, 1,6): Fließtext mit höchstens 62 Zeichen je Zeile, Silbentrennung an, `text-wrap: pretty`.
+- **Body** (400, 1,125 rem, 1,6): Fließtext mit einem Satzspiegel von 52ch (rund 65–70 Zeichen je Zeile), Silbentrennung an, `text-wrap: pretty`.
 - **Label** (500/600, 0,9375 rem, 1,5): Beschriftungen, Legenden, Tabellenköpfe, Bildunterschriften, Fußzeile.
 
 ### Named Rules
@@ -201,11 +201,11 @@ Eine kühle, nüchterne Palette: Papierweiß, ein Hauch Blaugrau als Fläche, ti
 
 Zwölfspaltiges Raster in einem Container von höchstens 1680 px, mit fließendem Seitenrand und Spaltenabstand (siehe spacing). Textseiten setzen die Überschrift in die Spalten 1–5 und den Text auf die feste Achse ab Spalte 6 (rund 42 %). Diese Achse hält über alle Textseiten. Farbseiten laufen vollflächig. Abschnitte atmen mit großzügigem vertikalem Abstand (section).
 
-Der Einstieg teilt sich etwa 55/45: links Titel, Leitsatz, Handlung und fünf Kennzahlen, rechts ein Flächenpanel mit dem live gerechneten Regionsbalken. Unter 1000 px stapelt sich alles einspaltig: Das Live-Panel rückt direkt hinter die Handlung und vor die Kennzahlen, die auf dem Handy 3 + 2 stehen. Unter 820 px wird die Navigation zu einem überlagernden Menüblatt. Unter 860 px bzw. 480 px werden die Tabellen zu Zeilenkarten. Sprungziele landen genau unter der 76 px hohen Kopfleiste.
+Der Einstieg teilt sich etwa 55/45: links Titel, Leitsatz, Handlung und fünf Kennzahlen, rechts ein Flächenpanel mit dem live gerechneten Regionsbalken. Unter 1000 px stapelt sich alles einspaltig: Das Live-Panel rückt direkt hinter die Handlung und vor die Kennzahlen, die auf dem Handy 3 + 2 stehen. Unter 820 px wird die Navigation zu einem überlagernden Menüblatt. Unter 980 px bzw. 480 px werden die Tabellen zu Zeilenkarten. Bis 900 px werden die Säulen der Weltregionen zu einer Liste aus Beschriftung und darunterliegendem Balken. Text steht nie im Balken. Sprungziele landen genau unter der 76 px hohen Kopfleiste.
 
 **Die Feste-Achse-Regel.** Fließtext beginnt auf Textseiten immer an derselben Achse. Ausnahmen sind vollbreite Diagramme, Tabellen und Fotos sowie Text, der direkt unter einem Foto in dessen Spalte weiterläuft. Ein Beispiel ist der deutsche Anker: Foto und Begründung stehen links, die Deutschlandkarte rechts daneben.
 
-**Die Ein-Moment-Regel.** Bewegung gibt es auf der Seite genau einmal: Titel, Leitsatz, Panel und Balken des Einstiegs bauen sich beim Laden auf. Danach wachsen nur die Regionsbalken der Allokation einmal an Ort und Stelle. Bedienelemente reagieren mit kurzen Zustandswechseln (unter 300 ms), sonst steht alles still.
+**Die Ein-Moment-Regel.** Bewegung gibt es auf der Seite genau einmal: Titel, Leitsatz, Panel und Balken des Einstiegs bauen sich beim Laden auf. Danach wachsen nur die Regionsbalken der Allokation einmal an Ort und Stelle. Sprünge zu Kapiteln und der Tastaturfokus scrollen sofort, ohne Gleiten. Bedienelemente reagieren mit kurzen Zustandswechseln (unter 300 ms), sonst steht alles still.
 
 ## Elevation & Depth
 

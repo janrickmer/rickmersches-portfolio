@@ -230,7 +230,7 @@
       },
       "body": {
         "displayName": "Body",
-        "purpose": "Fließtext, höchstens 62 Zeichen je Zeile, mit Silbentrennung."
+        "purpose": "Fließtext, Satzspiegel 52ch (rund 65–70 Zeichen), mit Silbentrennung."
       },
       "label": {
         "displayName": "Label",
@@ -319,8 +319,20 @@
         "value": "900px"
       },
       {
+        "name": "cards",
+        "value": "980px"
+      },
+      {
         "name": "tablet",
         "value": "1000px"
+      },
+      {
+        "name": "topbar-action",
+        "value": "1100px"
+      },
+      {
+        "name": "facts-row",
+        "value": "1250px"
       },
       {
         "name": "container",
@@ -430,7 +442,7 @@
       },
       {
         "name": "Die Ein-Moment-Regel",
-        "body": "Bewegung gibt es auf der Seite genau einmal: Titel, Leitsatz, Panel und Balken des Einstiegs bauen sich beim Laden auf. Danach wachsen nur die Regionsbalken der Allokation einmal an Ort und Stelle. Bedienelemente reagieren mit kurzen Zustandswechseln (unter 300 ms), sonst steht alles still.",
+        "body": "Bewegung gibt es auf der Seite genau einmal: Titel, Leitsatz, Panel und Balken des Einstiegs bauen sich beim Laden auf. Danach wachsen nur die Regionsbalken der Allokation einmal an Ort und Stelle. Sprünge zu Kapiteln und der Tastaturfokus scrollen sofort, ohne Gleiten. Bedienelemente reagieren mit kurzen Zustandswechseln (unter 300 ms), sonst steht alles still.",
         "section": "layout"
       },
       {
