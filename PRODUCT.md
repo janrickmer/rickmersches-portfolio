@@ -61,7 +61,12 @@ Märkte verschieben die Gewichte.
 
 - Name: „Das Rickmersche Portfolio“. Der Name ist reiner Titel und wird gestalterisch **nicht**
   thematisiert (keine Motive aus Herkunft oder Bedeutung des Namens).
-- Keine verbindlichen visuellen Vorgaben: Farbwelt und Schriften dürfen vollständig neu gewählt werden.
+- Bewusste Entscheidung für den Branchenstandard (Oktober 2026): eine klare, vertraute,
+  vertrauenswürdige Finanz-Dokumentation, ohne Ironie und ohne eingeschmuggelte Eigenheiten, auf dem
+  Handwerksniveau von **Finanztip** (gut lesbare Erklärtexte, klare Struktur, Vertrauen) und
+  **Trade Republic** (große Typografie, wenige Elemente, starke Bilder).
+- Bildwelt: sachliche, frei lizenzierte Fotos aus der Welt des Portfolios und höchstens ein stummer
+  Video-Loop, selbst gehostet und mit Bildnachweis; nie als eigene Aufnahmen ausgegeben.
 - Haltung: private, nicht kommerzielle Dokumentation; ausdrücklich keine Anlage-, Rechts- oder
   Steuerberatung.
 
