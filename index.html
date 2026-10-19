@@ -414,12 +414,13 @@ html:not(.js) .vid-toggle{display:none}
   .country-list{column-count:2}
 }
 @media (max-width:600px){
-  .country-list{column-count:2;column-gap:16px}
-  .country-list li{grid-template-columns:minmax(0,1fr) auto;gap:8px;padding:7px 6px}
+  /* zwei Spalten mit gemeinsamen Zeilen: ein umbrechender Name verschiebt die Nachbarspalte nicht */
+  .country-list{column-count:auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-auto-flow:column;grid-template-rows:repeat(var(--rows,25),auto);column-gap:20px}
+  .country-list li{grid-template-columns:minmax(0,1fr) auto;align-items:baseline;gap:10px;padding:7px 6px}
   .country-list .trk{display:none}
 }
 @media (max-width:389px){
-  .country-list{column-count:1}
+  .country-list{grid-template-columns:minmax(0,1fr);grid-auto-flow:row;grid-template-rows:none}
 }
 
 /* ════════════ Allokation (Farbseite) ════════════ */
@@ -2857,6 +2858,7 @@ const mapApi=(function paintMap(){
   const host=document.getElementById("countrylist");
   const rows=Object.entries(SHARES).sort((a,b)=>b[1]-a[1]);
   const max=rows[0][1];
+  host.style.setProperty("--rows",Math.ceil(rows.length/2));
   rows.forEach(([iso,p],i)=>{
     const li=document.createElement("li");
     li.dataset.iso=iso;
