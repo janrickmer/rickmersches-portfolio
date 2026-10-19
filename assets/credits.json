@@ -36,12 +36,12 @@
     "edit": "quadratischer Ausschnitt, Erdscheibe gleich groß wie beim Atlantik-Bild, 900 × 900"
   },
   {
-    "file": "goldbarren-fragment.jpg, goldbarren-fragment-900.jpg",
+    "file": "goldbarren-fragment.jpg, goldbarren-fragment-900.jpg, goldbarren-fragment-dunkel.jpg, goldbarren-fragment-dunkel-900.jpg",
     "title": "Fragment of a Gold Ingot",
     "creator": "Avar maker (The Metropolitan Museum of Art, object 464088)",
     "date": "700s",
     "licence": "CC0 (The Met Open Access)",
     "source": "https://www.metmuseum.org/art/collection/search/464088",
-    "edit": "verkleinert auf 1600 und 900 px Breite"
+    "edit": "Objekt vom grauen Studiohintergrund freigestellt, Hintergrund in der Seitenfarbe (hell #E6CF98, dunkel #372C15); verkleinert auf 1600 und 900 px Breite. Das Objekt selbst ist unverändert."
   }
 ]

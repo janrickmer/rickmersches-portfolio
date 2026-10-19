@@ -27,7 +27,7 @@ colors:
   blue-page-bar: "#A9C6F5"
   navy-page-ink: "#F3F6FA"
   navy-page-soft: "#B4C0D2"
-  gold-page: "#E2C677"
+  gold-page: "#E6CF98"
   gold-page-soft: "#3B3420"
   state-ok: "#2F7A3A"
   state-warn: "#B4471B"
@@ -35,6 +35,8 @@ colors:
   night-surface: "#141D2C"
   night-ink: "#E9EEF6"
   night-blue: "#6C9FF6"
+  night-bronze: "#372C15"
+  night-bronze-ink: "#F3EBD3"
 typography:
   display:
     fontFamily: "Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif"
@@ -74,7 +76,7 @@ rounded:
 spacing:
   gutter: "clamp(16px, 2.2vw, 32px)"
   margin: "clamp(20px, 4.45vw, 64px)"
-  section: "clamp(88px, 10.5vw, 168px)"
+  section: "clamp(80px, 8.5vw, 128px)"
   container: "1680px"
 components:
   button-primary:
@@ -143,7 +145,7 @@ Abgelehnt sind zwei Gegenbilder: die cremefarbene Privatbank-Broschüre mit Gold
 - Inter als einzige Familie, Zahlen immer tabellarisch
 - Textseiten auf fester Achse, dazwischen vollflächige Farbseiten
 - Flache Felder statt Linien, runde Schaltflächen, eckige Fotos
-- Bewegung ist ein Nachgeben, nie ein Verstecken
+- Ein einziger Bewegungsmoment im Einstieg, danach steht die Seite still
 - Hell und dunkel, Druck, reduzierte Bewegung und Kontrastmodus sind gleichwertig gestaltet
 
 ## Colors
@@ -158,7 +160,7 @@ Eine kühle, nüchterne Palette: Papierweiß, ein Hauch Blaugrau als Fläche, ti
 - **Kartenstufen** (map-q1 bis map-q4): Eine vierstufige, sequenzielle Blauskala für den Anteil je Land. Nicht enthaltene Länder stehen in **Kartengrau** (map-absent).
 
 ### Tertiary
-- **Goldreihe** (series-gold) und **Goldseite** (gold-page): Ausschließlich für die Goldposition, also den Goldbalken, das Legendenfeld und die Goldfarbseite. Die Fließtextfarbe auf Gold ist **Goldbraun** (gold-page-soft).
+- **Goldreihe** (series-gold) und **Goldseite** (gold-page): Ausschließlich für die Goldposition, also den Goldbalken, das Legendenfeld und die Goldfarbseite. Die Goldseite ist ein gedämpftes, blasses Gold. Die Fließtextfarbe darauf ist **Goldbraun** (gold-page-soft). Im Dunkelmodus wird die Seite zu **Bronze** (night-bronze) mit heller Schrift (night-bronze-ink), damit sie nie die hellste Fläche ist. Das Goldfoto ist auf die Seitenfarbe freigestellt, es gibt keinen fremden Hintergrund.
 
 ### Neutral
 - **Papier** (paper): Seitengrund und Schrift auf blauen Flächen.
@@ -199,9 +201,11 @@ Eine kühle, nüchterne Palette: Papierweiß, ein Hauch Blaugrau als Fläche, ti
 
 Zwölfspaltiges Raster in einem Container von höchstens 1680 px, mit fließendem Seitenrand und Spaltenabstand (siehe spacing). Textseiten setzen die Überschrift in die Spalten 1–5 und den Text auf die feste Achse ab Spalte 6 (rund 42 %). Diese Achse hält über alle Textseiten. Farbseiten laufen vollflächig. Abschnitte atmen mit großzügigem vertikalem Abstand (section).
 
-Der Einstieg teilt sich etwa 55/45: links Titel, Leitsatz, Handlung und fünf Kennzahlen, rechts ein Flächenpanel mit dem live gerechneten Regionsbalken. Unter 1000 px stapelt sich alles einspaltig. Unter 820 px wird die Navigation zu einem überlagernden Menüblatt. Unter 860 px bzw. 480 px werden die Tabellen zu Zeilenkarten. Sprungziele landen genau unter der 76 px hohen Kopfleiste.
+Der Einstieg teilt sich etwa 55/45: links Titel, Leitsatz, Handlung und fünf Kennzahlen, rechts ein Flächenpanel mit dem live gerechneten Regionsbalken. Unter 1000 px stapelt sich alles einspaltig: Das Live-Panel rückt direkt hinter die Handlung und vor die Kennzahlen, die auf dem Handy 3 + 2 stehen. Unter 820 px wird die Navigation zu einem überlagernden Menüblatt. Unter 860 px bzw. 480 px werden die Tabellen zu Zeilenkarten. Sprungziele landen genau unter der 76 px hohen Kopfleiste.
 
-**Die Feste-Achse-Regel.** Fließtext beginnt auf Textseiten immer an derselben Achse. Ausnahmen sind nur vollbreite Diagramme, Tabellen und Fotos.
+**Die Feste-Achse-Regel.** Fließtext beginnt auf Textseiten immer an derselben Achse. Ausnahmen sind vollbreite Diagramme, Tabellen und Fotos sowie Text, der direkt unter einem Foto in dessen Spalte weiterläuft. Ein Beispiel ist der deutsche Anker: Foto und Begründung stehen links, die Deutschlandkarte rechts daneben.
+
+**Die Ein-Moment-Regel.** Bewegung gibt es auf der Seite genau einmal: Titel, Leitsatz, Panel und Balken des Einstiegs bauen sich beim Laden auf. Danach wachsen nur die Regionsbalken der Allokation einmal an Ort und Stelle. Bedienelemente reagieren mit kurzen Zustandswechseln (unter 300 ms), sonst steht alles still.
 
 ## Elevation & Depth
 
@@ -257,8 +261,8 @@ Die Sprache aller Diagramme: ein gerundeter Balken auf grauer Spur oder freisteh
 ### Do:
 - **Do** Finanzblau (#1458D6) als einzige Handlungs- und Leitfarbe einsetzen und Diagrammfarben immer mit Wert und Namen zeigen.
 - **Do** Fließtext auf der festen Achse ab Spalte 6 von 12 setzen und Überschriften in Spalte 1–5 haften lassen.
-- **Do** Bewegung nur als Nachgeben bauen: Scroll-Einblendungen verschieben um höchstens 16 px, sie verbergen nie. UI-Übergänge bleiben unter 300 ms mit `cubic-bezier(.23,1,.32,1)`, Hover nur bei feinem Zeiger.
-- **Do** echte, gemeinfreie oder frei lizenzierte Archivbilder verwenden, selbst ausliefern, mit `srcset` anbieten und in der Fußzeile nachweisen.
+- **Do** Bewegung auf einen Moment beschränken: Der Einstieg baut sich auf, die Regionsbalken wachsen einmal an Ort und Stelle, alles andere steht still. UI-Übergänge bleiben unter 300 ms mit `cubic-bezier(.23,1,.32,1)`, Hover gibt es nur bei feinem Zeiger.
+- **Do** echte, gemeinfreie oder frei lizenzierte Archivbilder verwenden, selbst ausliefern, mit `srcset` anbieten und in der Fußzeile nachweisen. Jede Bearbeitung wie Ausschnitt oder Freistellung gehört in den Nachweis.
 - **Do** jede neue Fläche auch in Dunkelmodus, Druck, reduzierter Bewegung und Kontrastmodus prüfen.
 
 ### Don't:
@@ -266,5 +270,5 @@ Die Sprache aller Diagramme: ein gerundeter Balken auf grauer Spur oder freisteh
 - **Don't** Eyebrows, Trennlinien, Verläufe, Glas-Effekte oder Schatten in Ruhe einsetzen.
 - **Don't** eine zweite Schriftfamilie, Monospace oder gesperrte Großbuchstaben verwenden.
 - **Don't** Gold als Schmuckfarbe einsetzen oder die cremefarbene Privatbank-Anmutung zurückholen.
-- **Don't** Inhalte mit `opacity: 0` hinter einem Scroll-Beobachter verstecken.
+- **Don't** Abschnitte, Überschriften, Texte oder Fotos beim Scrollen einblenden. Keine wiederkehrenden Einblendeffekte, keine Vorhänge über Bildern, keine Inhalte mit `opacity: 0` hinter einem Beobachter.
 - **Don't** Motive aus Herkunft oder Bedeutung des Namens aufgreifen, und keine Bilder, die als eigene Aufnahmen erscheinen.

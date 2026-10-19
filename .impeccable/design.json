@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-19T09:27:34+00:00",
+  "generatedAt": "2026-10-19T09:38:37+00:00",
   "title": "Design System: Das Rickmersche Portfolio",
   "extensions": {
     "colorMeta": {
@@ -90,16 +90,16 @@
       },
       "gold-page": {
         "role": "tertiary",
-        "displayName": "Goldseite",
+        "displayName": "Goldseite (gedämpft)",
         "tonalRamp": [
-          "oklch(15% 0.104 90.5)",
-          "oklch(25% 0.104 90.5)",
-          "oklch(35% 0.104 90.5)",
-          "oklch(48% 0.104 90.5)",
-          "oklch(60% 0.104 90.5)",
-          "oklch(72% 0.104 90.5)",
-          "oklch(84% 0.104 90.5)",
-          "oklch(95% 0.104 90.5)"
+          "oklch(15% 0.076 87.9)",
+          "oklch(25% 0.076 87.9)",
+          "oklch(35% 0.076 87.9)",
+          "oklch(48% 0.076 87.9)",
+          "oklch(60% 0.076 87.9)",
+          "oklch(72% 0.076 87.9)",
+          "oklch(84% 0.076 87.9)",
+          "oklch(95% 0.076 87.9)"
         ]
       },
       "paper": {
@@ -199,6 +199,20 @@
           "oklch(84% 0.139 260.5)",
           "oklch(95% 0.139 260.5)"
         ]
+      },
+      "night-bronze": {
+        "role": "tertiary",
+        "displayName": "Bronze (Goldseite im Dunkelmodus)",
+        "tonalRamp": [
+          "oklch(15% 0.040 84.4)",
+          "oklch(25% 0.040 84.4)",
+          "oklch(35% 0.040 84.4)",
+          "oklch(48% 0.040 84.4)",
+          "oklch(60% 0.040 84.4)",
+          "oklch(72% 0.040 84.4)",
+          "oklch(84% 0.040 84.4)",
+          "oklch(95% 0.040 84.4)"
+        ]
       }
     },
     "typographyMeta": {
@@ -254,12 +268,12 @@
       {
         "name": "ease-in-out",
         "value": "cubic-bezier(.77,0,.175,1)",
-        "purpose": "Vorhang der Fotos und des Videos, Überblendung der Globen."
+        "purpose": "Überblendung der Globen in der Begründung."
       },
       {
         "name": "ease-soft",
         "value": "cubic-bezier(.33,1,.68,1)",
-        "purpose": "Langsames Nachzoomen von Foto und Video."
+        "purpose": "Reserve für langsame Bildbewegungen; derzeit nicht im Einsatz."
       },
       {
         "name": "press",
@@ -277,9 +291,14 @@
         "purpose": "Menüblatt, Kartenzustände, Schatten der Kopfleiste."
       },
       {
-        "name": "reveal",
-        "value": "800–900ms",
-        "purpose": "Einmalige Scroll-Einblendung: nur Verschiebung um 16 px, nie Ausblenden."
+        "name": "bars-grow",
+        "value": "1200ms",
+        "purpose": "Einmaliges Wachsen der Regionsbalken an Ort und Stelle; einzige Bewegung nach dem Einstieg."
+      },
+      {
+        "name": "hero-build",
+        "value": "900–1100ms",
+        "purpose": "Aufbau des Einstiegs beim Laden: Titelzeilen, Leitsatz, Panel, Balken."
       }
     ],
     "breakpoints": [
@@ -375,7 +394,7 @@
       "Inter als einzige Familie, Zahlen immer tabellarisch",
       "Textseiten auf fester Achse, dazwischen vollflächige Farbseiten",
       "Flache Felder statt Linien, runde Schaltflächen, eckige Fotos",
-      "Bewegung ist ein Nachgeben, nie ein Verstecken",
+      "Ein einziger Bewegungsmoment im Einstieg, danach steht die Seite still",
       "Hell und dunkel, Druck, reduzierte Bewegung und Kontrastmodus sind gleichwertig gestaltet"
     ],
     "rules": [
@@ -406,7 +425,12 @@
       },
       {
         "name": "Die Feste-Achse-Regel",
-        "body": "Fließtext beginnt auf Textseiten immer an derselben Achse. Ausnahmen sind nur vollbreite Diagramme, Tabellen und Fotos.",
+        "body": "Fließtext beginnt auf Textseiten immer an derselben Achse. Ausnahmen sind vollbreite Diagramme, Tabellen und Fotos sowie Text, der direkt unter einem Foto in dessen Spalte weiterläuft. Ein Beispiel ist der deutsche Anker: Foto und Begründung stehen links, die Deutschlandkarte rechts daneben.",
+        "section": "layout"
+      },
+      {
+        "name": "Die Ein-Moment-Regel",
+        "body": "Bewegung gibt es auf der Seite genau einmal: Titel, Leitsatz, Panel und Balken des Einstiegs bauen sich beim Laden auf. Danach wachsen nur die Regionsbalken der Allokation einmal an Ort und Stelle. Bedienelemente reagieren mit kurzen Zustandswechseln (unter 300 ms), sonst steht alles still.",
         "section": "layout"
       },
       {
@@ -418,8 +442,8 @@
     "dos": [
       "**Do** Finanzblau (#1458D6) als einzige Handlungs- und Leitfarbe einsetzen und Diagrammfarben immer mit Wert und Namen zeigen.",
       "**Do** Fließtext auf der festen Achse ab Spalte 6 von 12 setzen und Überschriften in Spalte 1–5 haften lassen.",
-      "**Do** Bewegung nur als Nachgeben bauen: Scroll-Einblendungen verschieben um höchstens 16 px, sie verbergen nie. UI-Übergänge bleiben unter 300 ms mit `cubic-bezier(.23,1,.32,1)`, Hover nur bei feinem Zeiger.",
-      "**Do** echte, gemeinfreie oder frei lizenzierte Archivbilder verwenden, selbst ausliefern, mit `srcset` anbieten und in der Fußzeile nachweisen.",
+      "**Do** Bewegung auf einen Moment beschränken: Der Einstieg baut sich auf, die Regionsbalken wachsen einmal an Ort und Stelle, alles andere steht still. UI-Übergänge bleiben unter 300 ms mit `cubic-bezier(.23,1,.32,1)`, Hover gibt es nur bei feinem Zeiger.",
+      "**Do** echte, gemeinfreie oder frei lizenzierte Archivbilder verwenden, selbst ausliefern, mit `srcset` anbieten und in der Fußzeile nachweisen. Jede Bearbeitung wie Ausschnitt oder Freistellung gehört in den Nachweis.",
       "**Do** jede neue Fläche auch in Dunkelmodus, Druck, reduzierter Bewegung und Kontrastmodus prüfen."
     ],
     "donts": [
@@ -427,7 +451,7 @@
       "**Don't** Eyebrows, Trennlinien, Verläufe, Glas-Effekte oder Schatten in Ruhe einsetzen.",
       "**Don't** eine zweite Schriftfamilie, Monospace oder gesperrte Großbuchstaben verwenden.",
       "**Don't** Gold als Schmuckfarbe einsetzen oder die cremefarbene Privatbank-Anmutung zurückholen.",
-      "**Don't** Inhalte mit `opacity: 0` hinter einem Scroll-Beobachter verstecken.",
+      "**Don't** Abschnitte, Überschriften, Texte oder Fotos beim Scrollen einblenden. Keine wiederkehrenden Einblendeffekte, keine Vorhänge über Bildern, keine Inhalte mit `opacity: 0` hinter einem Beobachter.",
       "**Don't** Motive aus Herkunft oder Bedeutung des Namens aufgreifen, und keine Bilder, die als eigene Aufnahmen erscheinen."
     ]
   }

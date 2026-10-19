@@ -130,7 +130,7 @@
   /* Farbseiten */
   --blue:#1458D6;--blue-ink:#FFFFFF;--blue-soft:#DCE7FB;--blue-bar:#A9C6F5;
   --navy:#0E1726;--navy-ink:#F3F6FA;--navy-soft:#B4C0D2;--navy-figure:#8DB4F7;
-  --gold:#E2C677;--gold-ink:#0E1726;--gold-soft:#3B3420;
+  --gold:#E6CF98;--gold-ink:#0E1726;--gold-soft:#3B3420;
   --tip-bg:#0E1726;--tip-ink:#F3F6FA;
   --ok:#2F7A3A;--warn:#B4471B;
   --shadow-rgb:14,23,38;
@@ -144,7 +144,7 @@
 
   --m:clamp(20px,4.45vw,64px);
   --g:clamp(16px,2.2vw,32px);
-  --section:clamp(88px,10.5vw,168px);
+  --section:clamp(80px,8.5vw,128px);
   --r-panel:20px;
   --r-field:12px;
 
@@ -173,7 +173,7 @@
     --s-na:#4F86EC;--s-eu:#8CC0F7;--s-ap:#1FB3A5;--s-la:#6BD3E6;--s-me:#5D7EDB;--s-af:#A6C4F4;--s-gold:#D4AE48;
     --blue:#123B86;--blue-ink:#EEF3FB;--blue-soft:#C4D6F5;--blue-bar:#7EA6EE;
     --navy:#141D2C;--navy-ink:#E9EEF6;--navy-soft:#A3AFC2;--navy-figure:#8DB4F7;
-    --gold:#C9A84F;--gold-ink:#0B111C;--gold-soft:#2B2614;
+    --gold:#372C15;--gold-ink:#F3EBD3;--gold-soft:#D9CBA3;
     --tip-bg:#E9EEF6;--tip-ink:#0B111C;
     --ok:#7CCB86;--warn:#F0A07A;
     --shadow-rgb:0,0,0;
@@ -207,6 +207,7 @@ img,video,svg{display:block;max-width:100%}
 .skip:focus{top:12px}
 .sr-only{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap}
 main>section{padding-block:var(--section)}
+#leitgedanke{padding-bottom:0}
 .muted{color:var(--muted)}
 .small{font-size:var(--t-small);line-height:1.5}
 .lead{font-size:var(--t-lead);line-height:1.38;letter-spacing:-.01em}
@@ -309,11 +310,15 @@ html:not(.js) .panel{display:none}
 .rank .v{text-align:right;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap}
 .rank .v small{font-weight:400;color:var(--muted);font-size:inherit;margin-left:8px}
 @media (max-width:1000px){
-  .hero-in{grid-template-columns:1fr}
-  .panel{max-width:640px}
+  .hero-in{grid-template-columns:1fr;row-gap:0}
+  .intro{display:contents}
+  .hero-in>.panel{order:1;max-width:640px;margin-top:clamp(32px,6vw,48px)}
+  .hero-in .facts{order:2;margin-top:clamp(40px,7vw,56px)}
 }
 @media (max-width:600px){
-  .facts{display:grid;grid-template-columns:1fr 1fr;row-gap:22px}
+  .facts{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:22px 16px}
+  .facts>div{grid-column:span 2}
+  .facts>div:nth-child(3),.facts>div:nth-child(4){grid-column:span 3;order:1}
   .legend{grid-template-columns:1fr;grid-auto-flow:row;grid-template-rows:none;row-gap:6px}
   .legend .e{grid-column:auto;margin:0;text-align:right}
   .legend li{grid-template-columns:12px minmax(0,1fr) auto auto}
@@ -502,10 +507,10 @@ table.port{table-layout:fixed;font-size:var(--t-small)}
 .mosaic{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:16px;margin-top:clamp(40px,5vw,72px);align-items:start}
 .photo{margin:0;background:var(--surface);overflow:hidden}
 .photo img{width:100%;height:100%;object-fit:cover}
-.anchor-photo{grid-column:1/9;margin:0}
+.anchor-photo{grid-column:1/9;grid-row:1;margin:0}
 .anchor-photo .photo img{aspect-ratio:16/10;display:block}
 .anchor-photo .cap{margin-top:12px}
-.anchor-side{grid-column:9/13;display:flex;flex-direction:column;gap:24px}
+.anchor-side{grid-column:9/13;grid-row:1/3;display:flex;flex-direction:column;gap:24px}
 .de-tile{background:var(--blue-soft);color:var(--ink);border-radius:var(--r-panel);padding:24px;aspect-ratio:4/5;display:flex;flex-direction:column}
 .de-tile svg{flex:1;width:100%;min-height:0}
 .de-tile .land{fill:var(--accent)}
@@ -517,12 +522,12 @@ table.port{table-layout:fixed;font-size:var(--t-small)}
 .facts-2 dt{color:var(--muted)}
 .facts-2 dd{font-weight:600;line-height:1.35}
 .cap{font-size:var(--t-small);color:var(--muted);margin-top:12px}
-.anchor-text{grid-column:6/13;margin-top:clamp(40px,5vw,64px)}
+.anchor-text{grid-column:1/9;grid-row:2;margin-top:clamp(32px,4vw,48px)}
 .note-panel{grid-column:1/-1;margin-top:clamp(40px,5vw,72px);background:var(--surface);border-radius:var(--r-panel);padding:clamp(22px,3vw,40px);display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:18px var(--g)}
 .note-panel h3{grid-column:1/5}
 .note-panel p{grid-column:span 4;font-size:var(--t-small);line-height:1.6;hyphens:auto;-webkit-hyphens:auto}
 @media (max-width:1000px){
-  .anchor-lead,.anchor-photo,.anchor-side,.anchor-text{grid-column:1/-1}
+  .anchor-lead,.anchor-photo,.anchor-side,.anchor-text{grid-column:1/-1;grid-row:auto}
   .anchor-side{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:start}
   .de-tile{aspect-ratio:auto;min-height:280px}
   .note-panel h3,.note-panel p{grid-column:1/-1}
@@ -534,7 +539,8 @@ table.port{table-layout:fixed;font-size:var(--t-small)}
 .field-gold a{color:var(--gold-ink)}
 .field-gold :focus-visible{outline-color:var(--gold-ink)}
 .field-gold .sec-body{color:var(--gold-soft)}
-.gold-photo{margin-top:clamp(48px,6vw,88px);height:clamp(260px,46vh,500px);background:#C9CBCC}
+.gold-photo{margin-top:clamp(48px,6vw,88px);height:clamp(260px,46vh,500px);background:var(--gold)}
+.photo picture{display:block;height:100%}
 .gold-photo img{object-position:50% 52%}
 .gold-cap{font-size:var(--t-small);color:var(--gold-soft);margin-top:12px}
 .gold-facts{margin-top:clamp(48px,6vw,88px);row-gap:40px}
@@ -677,7 +683,7 @@ footer :focus-visible{outline-color:var(--navy-ink)}
 @media (max-width:600px){.foot-cols>div{grid-column:1/-1}}
 
 /* ════════════ Bewegung ════════════ */
-/* Einblendungen bewegen nur, sie verbergen nie: Inhalte bleiben auch ohne Beobachter lesbar. */
+/* Ein einziger Moment: der Einstieg baut sich auf; danach wachsen nur die Regionsbalken an Ort und Stelle. Alles andere steht still. */
 @media (prefers-reduced-motion:no-preference){
   .js .hero h1 .line>span{transform:translateY(105%);animation:line-up 900ms var(--ease-out) forwards;animation-delay:calc(var(--i,0) * 110ms + 120ms)}
   .js [data-rise]{opacity:0;transform:translateY(18px);animation:rise var(--t-reveal) var(--ease-out) forwards;animation-delay:calc(var(--i,0) * 90ms + 340ms)}
@@ -687,21 +693,8 @@ footer :focus-visible{outline-color:var(--navy-ink)}
   @keyframes rise{to{opacity:1;transform:none}}
   @keyframes grow-x{to{transform:none}}
   @keyframes wipe{to{clip-path:inset(0)}}
-
-  .js [data-reveal]{transform:translateY(16px);transition:transform 900ms var(--ease-out);transition-delay:calc(var(--i,0) * 80ms)}
-  .js [data-reveal].is-in,.js [data-reveal="fade"]{transform:none}
-  .js .maturity .mat-bar{clip-path:inset(0 100% 0 0);transition:clip-path 1100ms var(--ease-out) 240ms}
-  .js .maturity.is-in .mat-bar{clip-path:inset(0)}
   .js .bars .col{transform:scaleY(.02);transition:transform 1200ms var(--ease-out);transition-delay:calc(var(--i,0) * 70ms + 120ms)}
   .js .bars.is-in .col{transform:none}
-  .js .bars .lab{opacity:0;transition:opacity 600ms var(--ease-out);transition-delay:calc(var(--i,0) * 70ms + 500ms)}
-  .js .bars.is-in .lab{opacity:1}
-  .js .port .sharecell .trk .f,.js .country-list .trk .f{transform:scaleX(.02);transform-origin:left center;transition:transform 900ms var(--ease-out);transition-delay:calc(var(--i,0) * 24ms)}
-  .js .is-in .sharecell .trk .f,.js .country-list.is-in .trk .f{transform:none}
-  .js .earth video{clip-path:inset(0 0 100% 0);transform:scale(1.1);transition:clip-path 1200ms var(--ease-in-out),transform 1800ms var(--ease-soft)}
-  .js .earth.is-in video{clip-path:inset(0);transform:none}
-  .js .photo.shutter img{clip-path:inset(0 0 100% 0);transform:scale(1.06);transition:clip-path 850ms var(--ease-in-out),transform 1300ms var(--ease-soft)}
-  .js .photo.shutter.is-in img{clip-path:inset(0);transform:none}
   @media (max-width:700px){.js .bars .col{transform:scaleX(.02)}}
 }
 
@@ -722,10 +715,7 @@ footer :focus-visible{outline-color:var(--navy-ink)}
   .field-blue,.field-navy,.field-gold,footer,.why-head,.tool{background:#fff!important;color:#000!important}
   .field-blue *,.field-navy *,.field-gold *,footer *{color:#000!important}
   .why-head,.sec-head>h2{position:static}
-  .js [data-reveal],.js [data-rise]{opacity:1!important;transform:none!important;animation:none!important}
-  .js .hero h1 .line>span,.js .hero .stack,.js .rank .trk .f,.js .mat-bar,.js .bars .col,.js .sharecell .trk .f,.js .country-list .trk .f{transform:none!important;clip-path:none!important;animation:none!important;transition:none!important}
-  .js .bars .lab{opacity:1!important;transition:none!important}
-  .js .photo.shutter img{clip-path:none!important;transform:none!important;transition:none!important}
+  .js [data-rise],.js .hero h1 .line>span,.js .hero .stack,.js .rank .trk .f,.js .bars .col{opacity:1!important;transform:none!important;clip-path:none!important;animation:none!important;transition:none!important}
   .mosaic{display:block}
   .anchor-side{margin-top:14pt}
   .de-tile{aspect-ratio:auto;max-width:55%}
@@ -987,12 +977,12 @@ const REGIONS=(()=>{
 <!-- ════════ LEITGEDANKE ════════ -->
 <section id="leitgedanke" aria-labelledby="h-leitgedanke">
   <div class="wrap grid sec-head">
-    <h2 id="h-leitgedanke" data-reveal>Worum es geht</h2>
+    <h2 id="h-leitgedanke">Worum es geht</h2>
     <div class="sec-body">
-      <p class="statement" data-reveal style="--i:1">Das Rickmersche Portfolio verfolgt ein einziges, klar umrissenes Ziel: am
+      <p class="statement">Das Rickmersche Portfolio verfolgt ein einziges, klar umrissenes Ziel: am
       weltweiten wirtschaftlichen Wachstum teilzuhaben — und dabei das Risiko <em>so weit wie irgend
       möglich</em> zu senken.</p>
-      <div class="prose" data-reveal style="--i:2">
+      <div class="prose">
       <p>Sein Mittel dazu ist die breitestmögliche Streuung: über Kontinente, über Industrie- und
       Schwellenländer, über Branchen und Tausende einzelne Unternehmen hinweg. Je breiter das Kapital
       verteilt ist, desto weniger hängt das Gesamtergebnis am Schicksal eines einzelnen Wertes, einer
@@ -1008,7 +998,7 @@ const REGIONS=(()=>{
       </div>
     </div>
   </div>
-  <figure class="earth" data-reveal="fade">
+  <figure class="earth">
     <video id="earth-video" muted loop playsinline preload="none" poster="assets/erde-iss-poster.jpg" width="1280" height="720" aria-hidden="true">
       <source src="assets/erde-iss-loop.webm" type="video/webm">
       <source src="assets/erde-iss-loop.mp4" type="video/mp4">
@@ -1022,8 +1012,8 @@ const REGIONS=(()=>{
 <section id="karte" aria-labelledby="h-karte">
   <div class="wrap">
     <div class="grid sec-head">
-      <h2 id="h-karte" data-reveal>Wohin jeder Euro fließt</h2>
-      <p class="sec-body prose" data-reveal style="--i:1">Jedes farbig markierte Land ist über mindestens einen Baustein des Sparplans im
+      <h2 id="h-karte">Wohin jeder Euro fließt</h2>
+      <p class="sec-body prose">Jedes farbig markierte Land ist über mindestens einen Baustein des Sparplans im
       Portfolio vertreten. Der Prozentwert gibt an, welcher Anteil der monatlichen Sparrate — über alle
       sechzehn Positionen hinweg verrechnet — auf dieses Land entfällt. Da einzelne Länder in mehreren
       ETFs enthalten sind (Japan etwa im Japan-ETF <em>und</em> im World&nbsp;ex&nbsp;USA), wurden die
@@ -1031,8 +1021,8 @@ const REGIONS=(()=>{
     </div>
 
     <div class="grid atlas">
-      <ul class="regions" id="regions" aria-label="Region auf der Karte hervorheben" data-reveal style="--i:1"></ul>
-      <figure class="stage" data-reveal style="--i:2">
+      <ul class="regions" id="regions" aria-label="Region auf der Karte hervorheben"></ul>
+      <figure class="stage">
         <svg id="worldmap" viewBox="0 0 1010 666" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="map-title">
 <title id="map-title">Weltkarte der 50 Portfolio-Länder, eingefärbt nach Anteil an der Sparrate. Alle Werte stehen in der Länderliste unter der Karte.</title>
 <path
@@ -2328,7 +2318,7 @@ const REGIONS=(()=>{
     </div>
 
     <div class="list-head"><h3>Länderanteile an der Sparrate</h3><span>50 Länder, absteigend sortiert</span></div>
-    <ol class="country-list" id="countrylist" data-reveal="fade"></ol>
+    <ol class="country-list" id="countrylist"></ol>
     <p class="method">Methodik: gerundete Näherungswerte auf Basis der
     Index-Ländergewichte (Stand Juni&nbsp;2026). Die Gewichte innerhalb der Indizes verschieben sich
     laufend mit den Marktkapitalisierungen; die Karte zeigt die Größenordnung, keine tagesaktuelle
@@ -2339,8 +2329,8 @@ const REGIONS=(()=>{
 <!-- ════════ ALLOKATION ════════ -->
 <section id="allokation" class="field-blue alloc" aria-labelledby="h-allokation" data-nav="karte">
   <div class="wrap grid alloc-top">
-    <h2 id="h-allokation" data-reveal>Zwei Blickwinkel auf dieselbe Sparrate</h2>
-    <div class="maturity" data-reveal style="--i:1">
+    <h2 id="h-allokation">Zwei Blickwinkel auf dieselbe Sparrate</h2>
+    <div class="maturity">
       <h3 class="chart-cap">Nach Marktreife</h3>
       <div id="maturity"></div>
     </div>
@@ -2356,11 +2346,11 @@ const REGIONS=(()=>{
 <section id="bausteine" aria-labelledby="h-bausteine">
   <div class="wrap">
     <div class="grid sec-head">
-      <h2 id="h-bausteine" data-reveal>Sechzehn Positionen, ein Regelwerk</h2>
-      <p class="sec-body prose" data-reveal style="--i:1">Fünfzehn ETFs und ein Gold-ETC, jeden Monat in unverändertem Verhältnis bespart.
+      <h2 id="h-bausteine">Sechzehn Positionen, ein Regelwerk</h2>
+      <p class="sec-body prose">Fünfzehn ETFs und ein Gold-ETC, jeden Monat in unverändertem Verhältnis bespart.
       Die Spalte rechts zeigt den Anteil jeder Position an der monatlichen Sparrate.</p>
     </div>
-    <div class="tablewrap" data-reveal="fade">
+    <div class="tablewrap">
       <table class="port" id="porttable">
         <caption class="sr-only">Die sechzehn Positionen des Sparplans, gruppiert nach Industrieländern, Schwellenländern und Gold</caption>
         <colgroup><col class="c-name"><col class="c-reg"><col class="c-isin"><col class="c-share"></colgroup>
@@ -2377,8 +2367,8 @@ const REGIONS=(()=>{
 <section id="vorteile" class="field-navy" aria-labelledby="h-vorteile" data-nav="bausteine">
   <div class="wrap grid why">
     <div class="why-head">
-      <h2 id="h-vorteile" data-reveal>Warum diese Aufteilung</h2>
-      <p data-reveal style="--i:1">Vier Gründe, die aus einem Welt-Sparplan ein steuerbares Regelwerk machen.</p>
+      <h2 id="h-vorteile">Warum diese Aufteilung</h2>
+      <p>Vier Gründe, die aus einem Welt-Sparplan ein steuerbares Regelwerk machen.</p>
       <div class="globes">
         <figure class="globe on" data-globe="a">
           <img src="assets/erde-nacht-atlantik.jpg" width="900" height="900" loading="lazy" decoding="async"
@@ -2394,7 +2384,7 @@ const REGIONS=(()=>{
       <p class="globe-cap" id="globe-cap">Amerika und Europa bei Nacht (NASA, Black Marble 2012)</p>
     </div>
     <ol class="reasons">
-      <li data-reveal data-globe-on="a">
+      <li data-globe-on="a">
         <h3>Regionen statt Blackbox</h3>
         <p>Ein einzelner Welt-ETF gewichtet stur nach Marktkapitalisierung — die USA stellen dort
         rund zwei Drittel, ohne dass der Anleger eingreifen kann. Hier ist jede Region ein eigener
@@ -2402,20 +2392,20 @@ const REGIONS=(()=>{
         mit 36&nbsp;% dagegen gestellt, Schwellenländer bis auf Länderebene
         (China, Indien, Korea, Malaysia) einzeln steuerbar.</p>
       </li>
-      <li data-reveal data-globe-on="b">
+      <li data-globe-on="b">
         <h3>Doppelte Diversifikation</h3>
         <p>USA und <em>World ex USA</em> ergeben zusammen den kompletten Industrieländer-Markt —
         nur eben in selbst gewählter Mischung. Die Schwellenländer sind in vier Regionalblöcke
         (Asien-Einzelländer, EM&nbsp;ex&nbsp;China, Lateinamerika, EMEA/GCC) zerlegt, sodass keine
         Weltgegend von der Entwicklung einer anderen verdeckt wird.</p>
       </li>
-      <li data-reveal data-globe-on="b">
+      <li data-globe-on="b">
         <h3>Heimatmarkt in drei Stufen</h3>
         <p>DAX, MDAX und SDAX bilden den deutschen Markt über alle Größenklassen ab — vom Weltkonzern
         bis zum Mittelständler. Zusammen mit den Deutschland-Anteilen in Stoxx&nbsp;600 und
         World&nbsp;ex&nbsp;USA entfallen rund <strong>7&nbsp;%</strong> der Sparrate auf den Heimatmarkt.</p>
       </li>
-      <li data-reveal data-globe-on="b">
+      <li data-globe-on="b">
         <h3>Kleine Raten, volle Struktur</h3>
         <p>Die kleinste Position wiegt nur <strong>1&nbsp;%</strong> — da moderne Broker auch
         Kleinstsparraten ausführen, lässt sich die Struktur bereits mit geringen Monatsbeträgen
@@ -2430,21 +2420,29 @@ const REGIONS=(()=>{
 <section id="anker" aria-labelledby="h-anker" data-nav="bausteine">
   <div class="wrap">
     <div class="grid">
-      <h2 id="h-anker" data-reveal style="grid-column:1/-1">Der deutsche Anker</h2>
-      <p class="lead anchor-lead" data-reveal style="--i:1">Bewusste Grundsatzentscheidung dieses Portfolios ist die Bevorzugung <strong>deutscher
+      <h2 id="h-anker" style="grid-column:1/-1">Der deutsche Anker</h2>
+      <p class="lead anchor-lead">Bewusste Grundsatzentscheidung dieses Portfolios ist die Bevorzugung <strong>deutscher
       Emittenten</strong>: Vierzehn der sechzehn Bausteine stammen von <strong>Xtrackers</strong>, der
       ETF-Marke der DWS Group mit Sitz in Frankfurt am Main; das Gold wird von der
       <strong>Boerse Stuttgart Commodities GmbH</strong> emittiert und in Deutschland verwahrt.</p>
     </div>
     <div class="mosaic">
       <figure class="anchor-photo">
-        <div class="photo shutter">
+        <div class="photo">
           <img src="assets/europa-nacht.jpg" srcset="assets/europa-nacht-960.jpg 960w, assets/europa-nacht.jpg 1920w" sizes="(max-width:1000px) 100vw, 64vw" width="1920" height="1200" loading="lazy" decoding="async"
                alt="Mitteleuropa bei Nacht aus dem Weltall: helle Städte in der Poebene und an der Adria, dahinter das dunkle Band der Alpen und die Lichter Süddeutschlands bis zum Horizont">
         </div>
         <figcaption class="cap">Mitteleuropa bei Nacht, von der Adria bis nach Deutschland; aufgenommen 2011 von der Internationalen Raumstation (NASA).</figcaption>
       </figure>
-      <div class="anchor-side" data-reveal style="--i:1">
+      <div class="prose anchor-text">
+      <p>Die Überlegung dahinter: Wer über Jahrzehnte spart, bindet sich an die Rechts- und
+      Einflusssphäre seines Produktanbieters. Ein Anbieter mit Hauptsitz, Aufsicht und
+      Ansprechpartnern im eigenen Land reduziert die Abhängigkeit von <strong>ausländischen
+      politischen Einflüssen</strong> — etwa Sanktionsregimen, Kapitalverkehrsbeschränkungen oder
+      abstimmungspolitischen Vorgaben großer US-Vermögensverwalter — und hält Wertschöpfung,
+      Steuersubstanz und Verantwortung im Inland.</p>
+      </div>
+      <div class="anchor-side">
         <div class="de-tile">
           <svg viewBox="489.5 276.5 30 38" role="img" aria-labelledby="de-title">
             <title id="de-title">Umriss Deutschlands mit Frankfurt am Main und Stuttgart</title>
@@ -2465,15 +2463,7 @@ const REGIONS=(()=>{
       </div>
     </div>
     <div class="grid">
-      <div class="prose anchor-text" data-reveal>
-      <p>Die Überlegung dahinter: Wer über Jahrzehnte spart, bindet sich an die Rechts- und
-      Einflusssphäre seines Produktanbieters. Ein Anbieter mit Hauptsitz, Aufsicht und
-      Ansprechpartnern im eigenen Land reduziert die Abhängigkeit von <strong>ausländischen
-      politischen Einflüssen</strong> — etwa Sanktionsregimen, Kapitalverkehrsbeschränkungen oder
-      abstimmungspolitischen Vorgaben großer US-Vermögensverwalter — und hält Wertschöpfung,
-      Steuersubstanz und Verantwortung im Inland.</p>
-      </div>
-      <div class="note-panel" role="note" aria-labelledby="tv-title" data-reveal>
+      <div class="note-panel" role="note" aria-labelledby="tv-title">
         <h3 id="tv-title">Transparenz-Vermerk</h3>
         <p><strong>Eine Ausnahme:</strong> Der SDAX-Baustein stammt von <strong>Amundi</strong> (Paris),
         da derzeit kein deutscher Anbieter einen SDAX-ETF auflegt. Er bleibt mit 1&nbsp;% die kleinste
@@ -2490,35 +2480,38 @@ const REGIONS=(()=>{
 <!-- ════════ GOLD ════════ -->
 <section id="gold" class="field-gold" aria-labelledby="h-gold">
   <div class="wrap grid sec-head">
-    <h2 id="h-gold" data-reveal>Gold ohne Gegenpartei-Land</h2>
-    <p class="sec-body prose lead" data-reveal style="--i:1">Drei Prozent der Sparrate fließen in physisches Gold. Es ist die einzige Position
+    <h2 id="h-gold">Gold ohne Gegenpartei-Land</h2>
+    <p class="sec-body prose lead">Drei Prozent der Sparrate fließen in physisches Gold. Es ist die einzige Position
     ohne Länderzuordnung — und genau das ist ihre Aufgabe: ein Wertspeicher, der keiner Regierung,
     keiner Notenbank und keinem Aktienmarkt gehört.</p>
   </div>
   <div class="wrap">
     <figure class="gold-figure">
-      <div class="photo shutter gold-photo">
-        <img src="assets/goldbarren-fragment.jpg" srcset="assets/goldbarren-fragment-900.jpg 900w, assets/goldbarren-fragment.jpg 1600w" sizes="(max-width:1680px) 100vw, 1552px" width="1600" height="1312" loading="lazy" decoding="async"
-             alt="Ein länglicher, handgegossener Goldbarren mit narbiger Oberfläche, an einem Ende abgetrennt, vor grauem Grund">
+      <div class="photo gold-photo">
+        <picture>
+          <source media="screen and (prefers-color-scheme: dark)" srcset="assets/goldbarren-fragment-dunkel-900.jpg 900w, assets/goldbarren-fragment-dunkel.jpg 1600w" sizes="(max-width:1680px) 100vw, 1552px">
+          <img src="assets/goldbarren-fragment.jpg" srcset="assets/goldbarren-fragment-900.jpg 900w, assets/goldbarren-fragment.jpg 1600w" sizes="(max-width:1680px) 100vw, 1552px" width="1600" height="1312" loading="lazy" decoding="async"
+               alt="Ein länglicher, handgegossener Goldbarren mit narbiger Oberfläche, an einem Ende abgetrennt, vor grauem Grund">
+        </picture>
       </div>
       <figcaption class="gold-cap">Fragment eines Goldbarrens, awarisch, 8.&nbsp;Jahrhundert. The Metropolitan Museum of Art, New York (gemeinfrei).</figcaption>
     </figure>
     <div class="grid gold-facts">
-      <article data-reveal>
+      <article>
         <h3>0,00&nbsp;% laufende Kosten</h3>
         <p>EUWAX Gold&nbsp;II erhebt laut Anbieter <strong>keine Verwaltungs- und keine
         Verwahrgebühren</strong> (TER 0,00&nbsp;%&nbsp;p.&nbsp;a.). Während klassische Gold-ETCs
         Jahr für Jahr 0,1–0,6&nbsp;% des Bestands abschöpfen, bleibt hier die gesamte
         Goldmenge erhalten — über Jahrzehnte ein erheblicher Unterschied.</p>
       </article>
-      <article data-reveal style="--i:1">
+      <article>
         <h3>Physisch, in Deutschland verwahrt</h3>
         <p>Jede Schuldverschreibung ist zu <strong>100&nbsp;% mit physischem Gold hinterlegt</strong>,
         gelagert im Hochsicherheitstresor der Börse Stuttgart — <strong>auf deutschem Boden</strong>,
         unter deutschem Recht. Kein Lagerort in London oder Zürich, keine fremde Jurisdiktion
         zwischen Sparer und Barren.</p>
       </article>
-      <article data-reveal style="--i:2">
+      <article>
         <h3>Lieferanspruch &amp; Steuerprofil</h3>
         <p>Anleger haben einen <strong>Anspruch auf physische Auslieferung</strong> des Goldes.
         Gewinne aus physisch besicherten Gold-ETCs mit Lieferanspruch werden nach gefestigter
@@ -2531,14 +2524,14 @@ const REGIONS=(()=>{
 </section>
 
 <!-- ════════ REBALANCING ════════ -->
-<section id="rebalancing" aria-labelledby="h-rebalancing" data-nav="gold">
+<section id="rebalancing" aria-labelledby="h-rebalancing">
   <div class="wrap grid sec-head">
-    <h2 id="h-rebalancing" data-reveal>Kein Rebalancing, aus Prinzip</h2>
-    <ul class="rules" aria-hidden="true" data-reveal style="--i:1">
+    <h2 id="h-rebalancing">Kein Rebalancing, aus Prinzip</h2>
+    <ul class="rules" aria-hidden="true">
       <li>Gewinner werden nicht beschnitten.</li>
       <li>Die Raten bleiben, wie sie sind.</li>
     </ul>
-    <div class="prose reb-body" data-reveal style="--i:2">
+    <div class="prose reb-body">
     <p>Dieses Portfolio wird <strong>nicht rebalanciert</strong>. Regionen, die über Jahre stark
     laufen, wachsen im Depotbestand automatisch über ihre Sparplan-Quote hinaus — und genau das ist
     beabsichtigt: <strong>Gewinner werden nicht beschnitten.</strong> Wer die stärksten Positionen
@@ -2551,7 +2544,7 @@ const REGIONS=(()=>{
     es wird also auch nicht prozyklisch kapituliert. Die Einzahlungen folgen stur dem Regelwerk;
     nur die Märkte selbst verschieben die Gewichte.</p>
     </div>
-    <div class="aside-note" data-reveal><p>Bewusst in Kauf genommene Konsequenz: Die Bestands-Allokation entfernt sich mit
+    <div class="aside-note"><p>Bewusst in Kauf genommene Konsequenz: Die Bestands-Allokation entfernt sich mit
     den Jahren planmäßig von der Einzahlungs-Allokation dieser Seite. Die Tabelle oben beschreibt,
     wie gesät wird — nicht, wie die Ernte einmal verteilt sein wird.</p></div>
   </div>
@@ -2562,8 +2555,8 @@ const REGIONS=(()=>{
   <span id="tool1"></span><span id="tool2"></span>
   <div class="wrap">
     <div class="grid sec-head tool-head">
-      <h2 id="h-rechner" data-reveal>Sparsumme in Raten umrechnen</h2>
-      <p class="sec-body" data-reveal style="--i:1">Ihr Betrag, aufgeteilt auf die sechzehn Positionen: centgenau und auf ganze Euro gerundet, mit der Rickmerschen oder Ihrer eigenen Gewichtung.</p>
+      <h2 id="h-rechner">Sparsumme in Raten umrechnen</h2>
+      <p class="sec-body">Ihr Betrag, aufgeteilt auf die sechzehn Positionen: centgenau und auf ganze Euro gerundet, mit der Rickmerschen oder Ihrer eigenen Gewichtung.</p>
     </div>
     <div class="tool" id="tool" data-mode="orig">
       <div class="modes" role="radiogroup" aria-label="Welche Gewichtung soll verwendet werden?">
@@ -2631,7 +2624,7 @@ const REGIONS=(()=>{
       </div>
       <div>
         <h2>Bildnachweise</h2>
-        <p id="credits">Video: <a href="https://images.nasa.gov/details/Earth%20Views%20from%20the%20International%20Space%20Station">„Earth Views from the International Space Station“</a>, NASA, gemeinfrei. Fotos: <a href="https://images.nasa.gov/details/iss029e021987">ISS029-E-021987</a>, Mitteleuropa bei Nacht, NASA/Mike Fossum, gemeinfrei; <a href="https://images.nasa.gov/details/GSFC_20171208_Archive_e001593">„Black Marble – City Lights 2012“</a> und <a href="https://images.nasa.gov/details/GSFC_20171208_Archive_e001591">„Black Marble – Africa, Europe, and the Middle East“</a>, NASA Goddard Space Flight Center, gemeinfrei; <a href="https://www.metmuseum.org/art/collection/search/464088">„Fragment of a Gold Ingot“</a>, awarisch, 8.&nbsp;Jh., The Metropolitan Museum of Art, CC0. Die NASA steht in keiner Verbindung zu dieser Seite und unterstützt sie nicht.</p>
+        <p id="credits">Video: <a href="https://images.nasa.gov/details/Earth%20Views%20from%20the%20International%20Space%20Station">„Earth Views from the International Space Station“</a>, NASA, gemeinfrei. Fotos: <a href="https://images.nasa.gov/details/iss029e021987">ISS029-E-021987</a>, Mitteleuropa bei Nacht, NASA/Mike Fossum, gemeinfrei; <a href="https://images.nasa.gov/details/GSFC_20171208_Archive_e001593">„Black Marble – City Lights 2012“</a> und <a href="https://images.nasa.gov/details/GSFC_20171208_Archive_e001591">„Black Marble – Africa, Europe, and the Middle East“</a>, NASA Goddard Space Flight Center, gemeinfrei; <a href="https://www.metmuseum.org/art/collection/search/464088">„Fragment of a Gold Ingot“</a>, awarisch, 8.&nbsp;Jh., The Metropolitan Museum of Art, CC0, vom Hintergrund freigestellt. Die NASA steht in keiner Verbindung zu dieser Seite und unterstützt sie nicht.</p>
       </div>
       <div>
         <h2>Rechtliches</h2>
@@ -2671,46 +2664,17 @@ const REGIONS=(()=>{
   rows.forEach(r=>io.observe(r));
 })();
 
-/* ════════ Einblenden beim Erreichen (einmalig; Inhalte sind nie verborgen) ════════ */
-(function reveal(){
-  const targets=[...document.querySelectorAll("[data-reveal],.bars,.tablewrap,.country-list,.earth")];
-  const shutters=[...document.querySelectorAll(".photo.shutter")];
-  const all=targets.concat(shutters);
-  const showAll=()=>all.forEach(el=>el.classList.add("is-in"));
-  addEventListener("beforeprint",showAll);
-  if(!("IntersectionObserver" in window)){showAll();return;}
-  // Fotos laden kurz vor dem Erreichen; der Vorhang öffnet sich erst im Bild und erst mit fertig dekodiertem Foto
-  const decoded=new Map();
-  const prime=el=>{
-    if(!decoded.has(el)){
-      const img=el.querySelector("img");
-      decoded.set(el,new Promise(res=>{
-        if(!img||(img.complete&&img.naturalWidth)){res();return;}
-        img.loading="eager";
-        (img.decode?img.decode():Promise.reject()).then(res,()=>{img.addEventListener("load",res,{once:true});img.addEventListener("error",res,{once:true});});
-        setTimeout(res,4000);
-      }));
-    }
-    return decoded.get(el);
-  };
-  const io=new IntersectionObserver(entries=>{
-    for(const e of entries){
-      if(!e.isIntersecting) continue;
-      const el=e.target;
-      io.unobserve(el);
-      if(shutters.includes(el))prime(el).then(()=>el.classList.add("is-in"));
-      else el.classList.add("is-in");
-    }
-  },{rootMargin:"0px 0px -10% 0px",threshold:0.08});
-  all.forEach(el=>io.observe(el));
-  const early=new IntersectionObserver(entries=>{
-    for(const e of entries){if(e.isIntersecting){prime(e.target);early.unobserve(e.target);}}
-  },{rootMargin:"0px 0px 60% 0px",threshold:0});
-  shutters.forEach(el=>early.observe(el));
-  // Sicherheitsnetz: was nach dem Laden im Bild ist, wird spätestens dann gezeigt
-  addEventListener("load",()=>setTimeout(()=>{
-    all.forEach(el=>{const r=el.getBoundingClientRect();if(r.top<innerHeight&&r.bottom>0)el.classList.add("is-in");});
-  },2500));
+/* ════════ Regionsbalken wachsen einmal an Ort und Stelle, sobald sie im Bild sind ════════ */
+(function growBars(){
+  const bars=document.getElementById("bars");
+  if(!bars) return;
+  const show=()=>bars.classList.add("is-in");
+  addEventListener("beforeprint",show);
+  if(!("IntersectionObserver" in window)){show();return;}
+  const io=new IntersectionObserver(es=>{if(es.some(e=>e.isIntersecting)){show();io.disconnect();}},{rootMargin:"0px 0px -10% 0px",threshold:0.15});
+  io.observe(bars);
+  // Sicherheitsnetz: was nach dem Laden im Bild ist, wächst spätestens dann
+  addEventListener("load",()=>setTimeout(()=>{const r=bars.getBoundingClientRect();if(r.top<innerHeight&&r.bottom>0)show();},2500));
 })();
 
 /* ════════ Video: im Bild abspielen, sonst pausieren; Schalter und reduzierte Bewegung haben Vorrang ════════ */
