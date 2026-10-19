@@ -206,6 +206,7 @@ img,video,svg{display:block;max-width:100%}
 .skip:focus{top:12px}
 .sr-only{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap}
 main>section{padding-block:var(--section)}
+#rechner{position:relative}#tool1,#tool2{position:absolute;top:0}
 #leitgedanke{padding-bottom:0}
 .muted{color:var(--muted)}
 .small{font-size:var(--t-small);line-height:1.5}
@@ -251,6 +252,7 @@ main>section{padding-block:var(--section)}
   .topbar .btn{display:none}
 }
 @media (max-width:820px){
+  html.js{scroll-padding-top:64px}
   .topbar-in{min-height:64px;flex-wrap:wrap}
   .js .menu-btn{display:inline-flex;align-items:center}
   .nav{width:100%;flex-wrap:wrap;padding-bottom:10px}
@@ -258,7 +260,8 @@ main>section{padding-block:var(--section)}
   .js .topbar.open .nav{position:absolute;top:100%;left:0;right:0;display:flex;flex-direction:column;gap:2px;padding:4px var(--m) 18px;background:var(--bg);box-shadow:0 18px 40px -20px rgba(var(--shadow-rgb),.5)} /* taste-skill-ignore: geöffnetes Menü */
   .js .topbar.open .nav a{font-size:var(--t-lead);font-weight:600;padding:12px 4px;border-radius:12px}
 }
-@media (max-width:359px){.presets{grid-template-columns:repeat(3,minmax(0,1fr))!important}.topbar-in{column-gap:10px}.mark{font-size:1rem}.menu-btn{padding:0 14px}}
+@media (max-width:379px){.presets{grid-template-columns:repeat(3,minmax(0,1fr))!important}}
+@media (max-width:359px){.topbar-in{column-gap:10px}.mark{font-size:1rem}.menu-btn{padding:0 14px}}
 @media (max-width:820px) and (prefers-reduced-motion:no-preference){
   .js .topbar.open .nav{animation:sheet var(--t-ui) var(--ease-out)}
   @keyframes sheet{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
@@ -314,7 +317,7 @@ html:not(.js) .panel{display:none}
   .facts>div:nth-child(2){grid-column:2/span 2}
   .facts dt{hyphens:auto;-webkit-hyphens:auto}
 }
-@media (max-width:359px){.facts{grid-template-columns:repeat(2,auto)}.facts>div:nth-child(2){grid-column:auto}}
+@media (max-width:359px){.hero h1{font-size:2.3rem}.facts{grid-template-columns:repeat(2,auto)}.facts>div:nth-child(2){grid-column:auto}.facts>div:nth-child(5){grid-column:1/-1}}
 @media (min-width:1001px) and (max-width:1249px){
   .legend{grid-template-columns:1fr;grid-auto-flow:row;grid-template-rows:none;row-gap:6px}
   .legend .e{grid-column:auto;margin:0;text-align:right}
@@ -411,8 +414,12 @@ html:not(.js) .vid-toggle{display:none}
   .country-list{column-count:2}
 }
 @media (max-width:600px){
+  .country-list{column-count:2;column-gap:16px}
+  .country-list li{grid-template-columns:minmax(0,1fr) auto;gap:8px;padding:7px 6px}
+  .country-list .trk{display:none}
+}
+@media (max-width:389px){
   .country-list{column-count:1}
-  .country-list li{grid-template-columns:minmax(0,1fr) 72px 60px}
 }
 
 /* ════════════ Allokation (Farbseite) ════════════ */
@@ -447,7 +454,7 @@ html:not(.js) .vid-toggle{display:none}
   .bars{grid-template-columns:1fr;gap:18px;min-height:0;padding-inline:0}
   .bars li{height:auto;display:flex;flex-direction:column;gap:8px}
   .bars .lab{display:flex;align-items:baseline;gap:10px;padding:0;font-weight:600}
-  .bars .lab b{display:inline;font-size:var(--t-body)}
+  .bars .lab b{display:inline-block;min-width:4.2em;font-size:var(--t-body)}
   .bars .col{height:16px;width:var(--w);border-radius:0 4px 4px 0;transform-origin:left center}
 }
 
@@ -457,6 +464,7 @@ table{border-collapse:collapse;width:100%}
 table.port{table-layout:fixed;font-size:var(--t-small)}
 .port thead th{text-align:left;font-size:var(--t-small);font-weight:500;color:var(--muted);padding:0 16px 12px}
 .port col.c-name{width:33%}.port col.c-reg{width:35%}.port col.c-isin{width:14%}.port col.c-share{width:18%}
+@media (min-width:981px) and (max-width:1240px){.port col.c-name{width:31%}.port col.c-reg{width:33%}.port col.c-isin{width:18%}}
 .port tbody th.grp{font-size:var(--t-lead);font-weight:600;letter-spacing:-.012em;text-align:left;padding:34px 16px 12px}
 .port tbody td.grp-v{font-size:var(--t-lead);font-weight:600;text-align:right;padding:34px 16px 12px;font-variant-numeric:tabular-nums}
 .port tbody tr.row:nth-child(even of .row) td{background:var(--surface)}
@@ -471,7 +479,7 @@ table.port{table-layout:fixed;font-size:var(--t-small)}
 .sharecell .trk .f{display:block;height:100%;width:var(--w);background:var(--accent);border-radius:99px;min-width:3px;transform-origin:left center}
 .port tr.gold .sharecell .trk .f{background:var(--s-gold)}
 .sharecell .num{font-size:var(--t-body);font-weight:600}
-.tag{display:inline-block;margin-left:8px;padding:2px 10px;border-radius:999px;background:var(--surface-2);color:var(--ink);font-size:var(--t-small);font-weight:500;vertical-align:1px;white-space:nowrap}
+.tag{display:inline-block;margin-left:0;padding:2px 10px;border-radius:999px;background:var(--surface-2);color:var(--ink);font-size:var(--t-small);font-weight:500;vertical-align:1px;white-space:nowrap}
 .port tfoot td{padding:18px 16px 0;font-weight:600;font-size:var(--t-body)}
 .port tfoot td.num{text-align:right}
 @media (max-width:980px){
@@ -511,7 +519,7 @@ table.port{table-layout:fixed;font-size:var(--t-small)}
 @media (max-width:900px){.why-head{position:static;grid-column:1/-1;margin-bottom:48px}.reasons{grid-column:1/-1}.globes{grid-template-columns:1fr 1fr;gap:16px;max-width:none}.globe{grid-area:auto;opacity:1;visibility:visible}.globe figcaption{display:block}.globe-cap{display:none}}
 
 /* ════════════ Deutscher Anker ════════════ */
-.anchor-lead{grid-column:1/9;margin-top:24px;max-width:30em}
+.anchor-lead{max-width:30em}
 .mosaic{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:16px;margin-top:clamp(40px,5vw,72px);align-items:start}
 .photo{margin:0;background:var(--surface);overflow:hidden}
 .photo img{width:100%;height:100%;object-fit:cover}
@@ -535,9 +543,10 @@ table.port{table-layout:fixed;font-size:var(--t-small)}
 .note-panel h3{grid-column:1/5}
 .note-panel p{grid-column:span 4;font-size:var(--t-small);line-height:1.6;hyphens:auto;-webkit-hyphens:auto}
 @media (max-width:1000px){
-  .anchor-lead,.anchor-photo,.anchor-side,.anchor-text{grid-column:1/-1;grid-row:auto}
+  .anchor-photo,.anchor-side,.anchor-text{grid-column:1/-1;grid-row:auto}
   .anchor-side{display:grid;grid-template-columns:1fr;gap:24px}
   .de-tile{aspect-ratio:auto;min-height:320px}
+  .de-tile svg{flex:none;height:clamp(300px,48vh,440px)}
   .facts-2{grid-template-columns:repeat(4,minmax(0,1fr))}
   .note-panel h3,.note-panel p{grid-column:1/-1}
 }
@@ -557,6 +566,8 @@ table.port{table-layout:fixed;font-size:var(--t-small)}
 .gold-facts h3{margin-bottom:10px}
 .gold-facts p{color:var(--gold-soft);hyphens:auto;-webkit-hyphens:auto}
 .gold-facts strong{color:var(--gold-ink)}
+@media (min-width:901px){.gold-facts article{grid-row:span 2;display:grid;grid-template-rows:subgrid;row-gap:0}}
+@media (max-width:1000px){.gold-facts p{max-width:52ch}.note-panel p,.de-tile p{max-width:58ch}}
 @media (max-width:900px){
   .gold-facts article{grid-column:1/-1}
 }
@@ -630,7 +641,7 @@ p.sec-body{max-width:52ch}
 .wtable .wcell .w-in{display:none}
 .tool[data-mode="own"] .wtable .wcell .w-in{display:inline-block}
 .tool[data-mode="own"] .wtable .wcell .w-txt{display:none}
-.wtable tfoot td{font-weight:600;padding:16px 14px 4px;background:var(--bg)}
+.wtable tfoot td{font-weight:600;padding-top:16px;padding-bottom:4px;background:var(--bg)}
 .tool[data-mode="own"] .wtable tfoot td{position:sticky;bottom:0;z-index:1;box-shadow:0 -12px 18px -14px rgba(var(--shadow-rgb),.35)} /* taste-skill-ignore: haftende Summenzeile */
 .hint{font-size:var(--t-small);color:var(--warn);margin-top:14px;line-height:1.5}
 .hint:empty{margin:0}
@@ -764,7 +775,7 @@ footer :focus-visible{outline-color:var(--navy-ink)}
     <div class="intro">
       <h1 id="h-top"><span class="line"><span style="--i:0">Das Rickmersche</span></span><span class="line"><span style="--i:1">Portfolio</span></span></h1>
       <p class="lead" data-rise style="--i:0">Ein global diversifizierter ETF-Sparplan mit gezielter Regionen-Steuerung,
-      deutschen Anbietern und physischem Gold — festgeschrieben als dauerhaftes Regelwerk.</p>
+      deutschen Anbietern und physischem Gold&nbsp;— festgeschrieben als dauerhaftes Regelwerk.</p>
       <div class="act" data-rise style="--i:1">
         <a class="btn" href="#rechner">Sparsumme umrechnen</a>
         <a class="textlink" href="#bausteine">Alle 16 Bausteine ansehen</a>
@@ -991,19 +1002,19 @@ const REGIONS=(()=>{
     <h2 id="h-leitgedanke">Worum es geht</h2>
     <div class="sec-body">
       <p class="statement">Das Rickmersche Portfolio verfolgt ein einziges, klar umrissenes Ziel: am
-      weltweiten wirtschaftlichen Wachstum teilzuhaben — und dabei das Risiko <em>so weit wie irgend
+      weltweiten wirtschaftlichen Wachstum teilzuhaben&nbsp;— und dabei das Risiko <em>so weit wie irgend
       möglich</em> zu senken.</p>
       <div class="prose">
       <p>Sein Mittel dazu ist die breitestmögliche Streuung: über Kontinente, über Industrie- und
       Schwellenländer, über Branchen und Tausende einzelne Unternehmen hinweg. Je breiter das Kapital
       verteilt ist, desto weniger hängt das Gesamtergebnis am Schicksal eines einzelnen Wertes, einer
-      einzelnen Branche oder einer einzelnen Volkswirtschaft — unternehmensspezifische Rückschläge
+      einzelnen Branche oder einer einzelnen Volkswirtschaft&nbsp;— unternehmensspezifische Rückschläge
       werden im großen Verbund aufgefangen.</p>
       <p>Anders als ein einzelner Welt-Index überlässt dieses Portfolio die geografische Verteilung
       aber nicht allein der Marktkapitalisierung, sondern <strong>betrachtet die Länderallokation
       gezielt und steuert sie bewusst</strong>. So dominiert kein einzelner Markt das Ergebnis, und
       kein Klumpenrisiko wächst unbemerkt heran. Wer in die Aktien der ganzen Welt investiert, trägt
-      die Weltwirtschaft als Ganzes — mit all ihren Wachstumszentren, ohne sein Schicksal an eine
+      die Weltwirtschaft als Ganzes&nbsp;— mit all ihren Wachstumszentren, ohne sein Schicksal an eine
       einzige Region zu binden. Maximale Diversifikation ist hier kein Selbstzweck, sondern das
       Werkzeug, das Ertragschance und Risikostreuung in Einklang bringt.</p>
       </div>
@@ -1025,8 +1036,8 @@ const REGIONS=(()=>{
     <div class="grid sec-head">
       <h2 id="h-karte">Wohin jeder Euro fließt</h2>
       <p class="sec-body prose">Jedes farbig markierte Land ist über mindestens einen Baustein des Sparplans im
-      Portfolio vertreten. Der Prozentwert gibt an, welcher Anteil der monatlichen Sparrate — über alle
-      sechzehn Positionen hinweg verrechnet — auf dieses Land entfällt. Da einzelne Länder in mehreren
+      Portfolio vertreten. Der Prozentwert gibt an, welcher Anteil der monatlichen Sparrate&nbsp;— über alle
+      sechzehn Positionen hinweg verrechnet&nbsp;— auf dieses Land entfällt. Da einzelne Länder in mehreren
       ETFs enthalten sind (Japan etwa im Japan-ETF <em>und</em> im World&nbsp;ex&nbsp;USA), wurden die
       Index-Ländergewichte mit der jeweiligen Sparrate multipliziert und aufsummiert.</p>
     </div>
@@ -2333,7 +2344,7 @@ const REGIONS=(()=>{
     <p class="method">Methodik: gerundete Näherungswerte auf Basis der
     Index-Ländergewichte (Stand Juni&nbsp;2026). Die Gewichte innerhalb der Indizes verschieben sich
     laufend mit den Marktkapitalisierungen; die Karte zeigt die Größenordnung, keine tagesaktuelle
-    Messung. Gold (3&nbsp;%) ist keinem Land zugeordnet — die Länderwerte summieren sich daher auf 97&nbsp;%.</p>
+    Messung. Gold (3&nbsp;%) ist keinem Land zugeordnet&nbsp;— die Länderwerte summieren sich daher auf 97&nbsp;%.</p>
   </div>
 </section>
 
@@ -2397,7 +2408,7 @@ const REGIONS=(()=>{
     <ol class="reasons">
       <li data-globe-on="a">
         <h3>Regionen statt Blackbox</h3>
-        <p>Ein einzelner Welt-ETF gewichtet stur nach Marktkapitalisierung — die USA stellen dort
+        <p>Ein einzelner Welt-ETF gewichtet stur nach Marktkapitalisierung&nbsp;— die USA stellen dort
         rund zwei Drittel, ohne dass der Anleger eingreifen kann. Hier ist jede Region ein eigener
         Regler: die USA bewusst auf <strong>30&nbsp;%</strong> dosiert, die übrigen Industrieländer
         mit 36&nbsp;% dagegen gestellt, Schwellenländer bis auf Länderebene
@@ -2405,20 +2416,20 @@ const REGIONS=(()=>{
       </li>
       <li data-globe-on="b">
         <h3>Doppelte Diversifikation</h3>
-        <p>USA und <em>World ex USA</em> ergeben zusammen den kompletten Industrieländer-Markt —
+        <p>USA und <em>World ex USA</em> ergeben zusammen den kompletten Industrieländer-Markt&nbsp;—
         nur eben in selbst gewählter Mischung. Die Schwellenländer sind in vier Regionalblöcke
         (Asien-Einzelländer, EM&nbsp;ex&nbsp;China, Lateinamerika, EMEA/GCC) zerlegt, sodass keine
         Weltgegend von der Entwicklung einer anderen verdeckt wird.</p>
       </li>
       <li data-globe-on="b">
         <h3>Heimatmarkt in drei Stufen</h3>
-        <p>DAX, MDAX und SDAX bilden den deutschen Markt über alle Größenklassen ab — vom Weltkonzern
+        <p>DAX, MDAX und SDAX bilden den deutschen Markt über alle Größenklassen ab&nbsp;— vom Weltkonzern
         bis zum Mittelständler. Zusammen mit den Deutschland-Anteilen in Stoxx&nbsp;600 und
         World&nbsp;ex&nbsp;USA entfallen rund <strong>7&nbsp;%</strong> der Sparrate auf den Heimatmarkt.</p>
       </li>
       <li data-globe-on="b">
         <h3>Kleine Raten, volle Struktur</h3>
-        <p>Die kleinste Position wiegt nur <strong>1&nbsp;%</strong> — da moderne Broker auch
+        <p>Die kleinste Position wiegt nur <strong>1&nbsp;%</strong>&nbsp;— da moderne Broker auch
         Kleinstsparraten ausführen, lässt sich die Struktur bereits mit geringen Monatsbeträgen
         vollständig abbilden und verlustfrei auf jede Sparsumme skalieren. Der Rechner am Ende
         dieser Seite rechnet es vor.</p>
@@ -2430,9 +2441,9 @@ const REGIONS=(()=>{
 <!-- ════════ DEUTSCHER ANKER ════════ -->
 <section id="anker" aria-labelledby="h-anker" data-nav="bausteine">
   <div class="wrap">
-    <div class="grid">
-      <h2 id="h-anker" style="grid-column:1/-1">Der deutsche Anker</h2>
-      <p class="lead anchor-lead">Bewusste Grundsatzentscheidung dieses Portfolios ist die Bevorzugung <strong>deutscher
+    <div class="grid sec-head">
+      <h2 id="h-anker">Der deutsche Anker</h2>
+      <p class="lead sec-body anchor-lead">Bewusste Grundsatzentscheidung dieses Portfolios ist die Bevorzugung <strong>deutscher
       Emittenten</strong>: Vierzehn der sechzehn Bausteine stammen von <strong>Xtrackers</strong>, der
       ETF-Marke der DWS Group mit Sitz in Frankfurt am Main; das Gold wird von der
       <strong>Boerse Stuttgart Commodities GmbH</strong> emittiert und in Deutschland verwahrt.</p>
@@ -2449,8 +2460,8 @@ const REGIONS=(()=>{
       <p>Die Überlegung dahinter: Wer über Jahrzehnte spart, bindet sich an die Rechts- und
       Einflusssphäre seines Produktanbieters. Ein Anbieter mit Hauptsitz, Aufsicht und
       Ansprechpartnern im eigenen Land reduziert die Abhängigkeit von <strong>ausländischen
-      politischen Einflüssen</strong> — etwa Sanktionsregimen, Kapitalverkehrsbeschränkungen oder
-      abstimmungspolitischen Vorgaben großer US-Vermögensverwalter — und hält Wertschöpfung,
+      politischen Einflüssen</strong>&nbsp;— etwa Sanktionsregimen, Kapitalverkehrsbeschränkungen oder
+      abstimmungspolitischen Vorgaben großer US-Vermögensverwalter&nbsp;— und hält Wertschöpfung,
       Steuersubstanz und Verantwortung im Inland.</p>
       </div>
       <div class="anchor-side">
@@ -2479,7 +2490,7 @@ const REGIONS=(()=>{
         <p><strong>Eine Ausnahme:</strong> Der SDAX-Baustein stammt von <strong>Amundi</strong> (Paris),
         da derzeit kein deutscher Anbieter einen SDAX-ETF auflegt. Er bleibt mit 1&nbsp;% die kleinste
         mögliche Position, bis eine deutsche Alternative existiert.</p>
-        <p><strong>Fondsdomizile:</strong> Die Xtrackers-ETFs sind — branchenüblich — als
+        <p><strong>Fondsdomizile:</strong> Die Xtrackers-ETFs sind&nbsp;— branchenüblich&nbsp;— als
         UCITS-Sondervermögen in Luxemburg bzw. Irland aufgelegt. Verwaltung und Verantwortung liegen
         bei der deutschen DWS; das Sondervermögen ist auch im Insolvenzfall des Anbieters geschützt
         und unterliegt vollständig EU-Recht.</p>
@@ -2493,7 +2504,7 @@ const REGIONS=(()=>{
   <div class="wrap grid sec-head">
     <h2 id="h-gold">Gold ohne Gegenpartei-Land</h2>
     <p class="sec-body prose lead">Drei Prozent der Sparrate fließen in physisches Gold. Es ist die einzige Position
-    ohne Länderzuordnung — und genau das ist ihre Aufgabe: ein Wertspeicher, der keiner Regierung,
+    ohne Länderzuordnung&nbsp;— und genau das ist ihre Aufgabe: ein Wertspeicher, der keiner Regierung,
     keiner Notenbank und keinem Aktienmarkt gehört.</p>
   </div>
   <div class="wrap">
@@ -2513,12 +2524,12 @@ const REGIONS=(()=>{
         <p>EUWAX Gold&nbsp;II erhebt laut Anbieter <strong>keine Verwaltungs- und keine
         Verwahrgebühren</strong> (TER 0,00&nbsp;%&nbsp;p.&nbsp;a.). Während klassische Gold-ETCs
         Jahr für Jahr 0,1–0,6&nbsp;% des Bestands abschöpfen, bleibt hier die gesamte
-        Goldmenge erhalten — über Jahrzehnte ein erheblicher Unterschied.</p>
+        Goldmenge erhalten&nbsp;— über Jahrzehnte ein erheblicher Unterschied.</p>
       </article>
       <article>
         <h3>Physisch, in Deutschland verwahrt</h3>
         <p>Jede Schuldverschreibung ist zu <strong>100&nbsp;% mit physischem Gold hinterlegt</strong>,
-        gelagert im Hochsicherheitstresor der Börse Stuttgart — <strong>auf deutschem Boden</strong>,
+        gelagert im Hochsicherheitstresor der Börse Stuttgart&nbsp;— <strong>auf deutschem Boden</strong>,
         unter deutschem Recht. Kein Lagerort in London oder Zürich, keine fremde Jurisdiktion
         zwischen Sparer und Barren.</p>
       </article>
@@ -2544,20 +2555,20 @@ const REGIONS=(()=>{
     </ul>
     <div class="prose reb-body">
     <p>Dieses Portfolio wird <strong>nicht rebalanciert</strong>. Regionen, die über Jahre stark
-    laufen, wachsen im Depotbestand automatisch über ihre Sparplan-Quote hinaus — und genau das ist
+    laufen, wachsen im Depotbestand automatisch über ihre Sparplan-Quote hinaus&nbsp;— und genau das ist
     beabsichtigt: <strong>Gewinner werden nicht beschnitten.</strong> Wer die stärksten Positionen
     regelmäßig zurückstutzt, unterbricht den Zinseszins dort, wo er am kräftigsten arbeitet, löst
     vorzeitig Kapitalertragsteuer aus und produziert Transaktionskosten. Hier darf eine Region, die
     sich verzehnfacht, ihr volles Gewicht behalten.</p>
     <p>Die Disziplin wirkt in beide Richtungen: <strong>Auch die Sparraten bleiben unverändert.</strong>
-    Performt eine Region herausragend, wird ihre Rate <em>nicht</em> erhöht — es wird also nicht
-    teuren Kursen hinterhergekauft. Bricht eine Region ein, wird ihre Rate <em>nicht</em> gesenkt —
+    Performt eine Region herausragend, wird ihre Rate <em>nicht</em> erhöht&nbsp;— es wird also nicht
+    teuren Kursen hinterhergekauft. Bricht eine Region ein, wird ihre Rate <em>nicht</em> gesenkt&nbsp;—
     es wird also auch nicht prozyklisch kapituliert. Die Einzahlungen folgen stur dem Regelwerk;
     nur die Märkte selbst verschieben die Gewichte.</p>
     </div>
     <div class="aside-note"><p>Bewusst in Kauf genommene Konsequenz: Die Bestands-Allokation entfernt sich mit
     den Jahren planmäßig von der Einzahlungs-Allokation dieser Seite. Die Tabelle oben beschreibt,
-    wie gesät wird — nicht, wie die Ernte einmal verteilt sein wird.</p></div>
+    wie gesät wird&nbsp;— nicht, wie die Ernte einmal verteilt sein wird.</p></div>
   </div>
 </section>
 
@@ -2576,11 +2587,11 @@ const REGIONS=(()=>{
       </div>
       <h3 class="mode-title orig-only">Das Original auf Ihre Sparsumme übertragen</h3>
       <h3 class="mode-title own-only">Eigene Gewichtung entwerfen</h3>
-      <p class="mode-lede orig-only">Sie möchten exakt die Gewichtung des Rickmerschen Portfolios — nur mit Ihrer
+      <p class="mode-lede orig-only">Sie möchten exakt die Gewichtung des Rickmerschen Portfolios&nbsp;— nur mit Ihrer
       eigenen Sparsumme? Betrag eintragen, fertig: Die Tabelle zeigt für jede Position die monatliche
       Rate, centgenau und auf ganze Euro gerundet.</p>
       <p class="mode-lede own-only">Verteilen Sie die sechzehn Bausteine nach Ihrer eigenen Überzeugung: Gewichte je
-      Position eintragen (Summe&nbsp;100&nbsp;%), Sparsumme wählen — die Tabelle rechnet die monatlichen
+      Position eintragen (Summe&nbsp;100&nbsp;%), Sparsumme wählen&nbsp;— die Tabelle rechnet die monatlichen
       Raten centgenau und zusätzlich auf ganze Euro gerundet (Largest-Remainder-Verfahren, damit die
       Summe exakt aufgeht).</p>
       <div class="controls">
@@ -2629,7 +2640,7 @@ const REGIONS=(()=>{
         <h2>Datenstand</h2>
         <p>Ländergewichte: gerundete Näherungswerte auf Basis der Indexzusammensetzungen,
         Stand Juni&nbsp;2026. Produktangaben (TER, Domizil, Ausschüttung) gemäß Anbieter- und
-        Portalangaben zum selben Stichtag — maßgeblich sind allein die offiziellen Verkaufsunterlagen
+        Portalangaben zum selben Stichtag&nbsp;— maßgeblich sind allein die offiziellen Verkaufsunterlagen
         der Emittenten.</p>
         <p>Statische Seite ohne Server, Cookies oder externe Dienste; Schriften, Bilder und Video liefert diese Website selbst aus.</p>
       </div>
@@ -3044,6 +3055,7 @@ const mapApi=(function paintMap(){
   document.addEventListener("focusin",ev=>{
     const el=ev.target;
     if(!(el instanceof HTMLElement)||bar.contains(el)) return;
+    if(!el.matches(":focus-visible")) return;
     requestAnimationFrame(()=>{
       const r=el.getBoundingClientRect();
       const navBottom=bar.getBoundingClientRect().bottom;
