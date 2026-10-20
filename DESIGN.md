@@ -37,6 +37,8 @@ colors:
   night-blue: "#6C9FF6"
   night-bronze: "#372C15"
   night-bronze-ink: "#F3EBD3"
+  veil: "rgba(255, 255, 255, 0.82)"
+  night-veil: "rgba(11, 17, 28, 0.82)"
 typography:
   display:
     fontFamily: "Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif"
@@ -136,7 +138,7 @@ components:
 
 Die Seite ist ein Datenblatt, das man gern liest: der Branchenstandard deutscher Finanzerklärseiten, ohne Ironie und ohne Privatbank-Pathos gespielt. Vorbilder sind die Klarheit von Finanztip und die Zurückhaltung von Trade Republic, also große Schrift, wenige Elemente und starke Bilder. Jede Zahl ist eine echte Zahl aus dem Sparplan. Was gezeigt wird, lässt sich nachrechnen.
 
-Gebaut ist die Seite auf weißem Grund mit einer einzigen kühlen Flächenstufe, Tinte statt Schwarz und einem Finanzblau, das Handlung und Leitreihe zugleich ist. Den Rhythmus geben Textseiten mit fester Achse und vollflächige Farbseiten in Blau, Nachtblau und Gold. Abgegrenzt wird über Flächen, nie über Linien. Die Bildwelt besteht aus sachlichen, gemeinfreien Archivaufnahmen (NASA, The Met) und einem stummen Video, alles selbst ausgeliefert und nachgewiesen.
+Gebaut ist die Seite auf weißem Grund mit einer einzigen kühlen Flächenstufe, Tinte statt Schwarz und einem Finanzblau, das Handlung und Leitreihe zugleich ist. Den Rhythmus geben Textseiten mit fester Achse und vollflächige Farbseiten in Blau, Nachtblau und Gold. Abgegrenzt wird über Flächen, nie über Linien. Die Bildwelt besteht aus sachlichen, gemeinfreien Archivaufnahmen (NASA, The Met) und einem stummen Erdvideo, das blass hinter dem Leitgedanken läuft. Alles ist selbst ausgeliefert und nachgewiesen.
 
 Abgelehnt sind zwei Gegenbilder: die cremefarbene Privatbank-Broschüre mit Goldschrift, die diese Seite ersetzt, und das Dashboard aus Kennzahlkacheln und Icon-Karten.
 
@@ -170,6 +172,7 @@ Eine kühle, nüchterne Palette: Papierweiß, ein Hauch Blaugrau als Fläche, ti
 - **Feldrand** (field-stroke): Der einzige sichtbare Rand der Seite, an Eingabefeldern.
 - **Spurgrau** (track-grey): Die Hintergrundspur der Anteilsbalken.
 - **Nachtfarben** (night-paper, night-surface, night-ink, night-blue): Der Dunkelmodus. Gleiche Rollen, hellere Akzente.
+- **Schleier** (veil, night-veil): Papier bzw. Nachtpapier mit 82 % Deckkraft über dem Erdvideo im Leitgedanken. Er verblasst das Video so weit, dass jeder Text über jedem Videobild WCAG AA hält.
 
 ### Named Rules
 **Die Ein-Blau-Regel.** Finanzblau ist die einzige Handlungsfarbe und die Leitreihe der Diagramme. Es schmückt nie, und kein zweiter Akzent tritt neben es.
@@ -205,7 +208,7 @@ Der Einstieg teilt sich etwa 55/45: links Titel, Leitsatz, Handlung und fünf Ke
 
 **Die Feste-Achse-Regel.** Fließtext beginnt auf Textseiten immer an derselben Achse. Ausnahmen sind vollbreite Diagramme, Tabellen und Fotos sowie Text, der direkt unter einem Foto in dessen Spalte weiterläuft. Ein Beispiel ist der deutsche Anker: Foto und Begründung stehen links, die Deutschlandkarte rechts daneben.
 
-**Die Ein-Moment-Regel.** Bewegung gibt es auf der Seite genau einmal: Titel, Leitsatz, Panel und Balken des Einstiegs bauen sich beim Laden auf. Danach wachsen nur die Regionsbalken der Allokation einmal an Ort und Stelle. Sprünge zu Kapiteln und der Tastaturfokus scrollen sofort, ohne Gleiten. Bedienelemente reagieren mit kurzen Zustandswechseln (unter 300 ms), sonst steht alles still.
+**Die Ein-Moment-Regel.** Bewegung gibt es auf der Seite genau einmal: Titel, Leitsatz, Panel und Balken des Einstiegs bauen sich beim Laden auf. Danach wachsen nur die Regionsbalken der Allokation einmal an Ort und Stelle. Das Erdvideo läuft als blasser Hintergrund des Leitgedankens in Schleife. Es startet erst im Bild, lässt sich anhalten und bleibt bei reduzierter Bewegung stehen; die Überschrift dieses Abschnitts haftet nicht, damit nichts zusätzlich über das bewegte Bild gleitet. Sprünge zu Kapiteln und der Tastaturfokus scrollen sofort, ohne Gleiten. Bedienelemente reagieren mit kurzen Zustandswechseln (unter 300 ms), sonst steht alles still.
 
 ## Elevation & Depth
 
@@ -262,7 +265,7 @@ Die Sprache aller Diagramme: ein gerundeter Balken auf grauer Spur oder freisteh
 - **Do** Finanzblau (#1458D6) als einzige Handlungs- und Leitfarbe einsetzen und Diagrammfarben immer mit Wert und Namen zeigen.
 - **Do** Fließtext auf der festen Achse ab Spalte 6 von 12 setzen und Überschriften in Spalte 1–5 haften lassen.
 - **Do** Bewegung auf einen Moment beschränken: Der Einstieg baut sich auf, die Regionsbalken wachsen einmal an Ort und Stelle, alles andere steht still. UI-Übergänge bleiben unter 300 ms mit `cubic-bezier(.23,1,.32,1)`, Hover gibt es nur bei feinem Zeiger.
-- **Do** echte, gemeinfreie oder frei lizenzierte Archivbilder verwenden, selbst ausliefern, mit `srcset` anbieten und in der Fußzeile nachweisen. Jede Bearbeitung wie Ausschnitt oder Freistellung gehört in den Nachweis.
+- **Do** echte, gemeinfreie oder frei lizenzierte Archivbilder verwenden, selbst ausliefern, mit `srcset` anbieten und in der Fußzeile nachweisen. Jede Bearbeitung wie Ausschnitt oder Freistellung gehört in den Nachweis. Bewegtbild nur als blasser Hintergrund unter dem Schleier und immer mit Pausenschalter.
 - **Do** jede neue Fläche auch in Dunkelmodus, Druck, reduzierter Bewegung und Kontrastmodus prüfen.
 
 ### Don't:
