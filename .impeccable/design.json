@@ -213,6 +213,11 @@
           "oklch(84% 0.040 84.4)",
           "oklch(95% 0.040 84.4)"
         ]
+      },
+      "night-veil": {
+        "role": "neutral",
+        "displayName": "Schleier im Dunkelmodus",
+        "canonical": "rgba(11,17,28,.82)"
       }
     },
     "typographyMeta": {
@@ -400,7 +405,7 @@
   ],
   "narrative": {
     "northStar": "Das offene Datenblatt",
-    "overview": "Die Seite ist ein Datenblatt, das man gern liest: der Branchenstandard deutscher Finanzerklärseiten, ohne Ironie und ohne Privatbank-Pathos gespielt. Vorbilder sind die Klarheit von Finanztip und die Zurückhaltung von Trade Republic, also große Schrift, wenige Elemente und starke Bilder. Jede Zahl ist eine echte Zahl aus dem Sparplan. Was gezeigt wird, lässt sich nachrechnen.\n\nGebaut ist die Seite auf weißem Grund mit einer einzigen kühlen Flächenstufe, Tinte statt Schwarz und einem Finanzblau, das Handlung und Leitreihe zugleich ist. Den Rhythmus geben Textseiten mit fester Achse und vollflächige Farbseiten in Blau, Nachtblau und Gold. Abgegrenzt wird über Flächen, nie über Linien. Die Bildwelt besteht aus sachlichen, gemeinfreien Archivaufnahmen (NASA, The Met) und einem stummen Video, alles selbst ausgeliefert und nachgewiesen.\n\nAbgelehnt sind zwei Gegenbilder: die cremefarbene Privatbank-Broschüre mit Goldschrift, die diese Seite ersetzt, und das Dashboard aus Kennzahlkacheln und Icon-Karten.",
+    "overview": "Die Seite ist ein Datenblatt, das man gern liest: der Branchenstandard deutscher Finanzerklärseiten, ohne Ironie und ohne Privatbank-Pathos gespielt. Vorbilder sind die Klarheit von Finanztip und die Zurückhaltung von Trade Republic, also große Schrift, wenige Elemente und starke Bilder. Jede Zahl ist eine echte Zahl aus dem Sparplan. Was gezeigt wird, lässt sich nachrechnen.\n\nGebaut ist die Seite auf weißem Grund mit einer einzigen kühlen Flächenstufe, Tinte statt Schwarz und einem Finanzblau, das Handlung und Leitreihe zugleich ist. Den Rhythmus geben Textseiten mit fester Achse und vollflächige Farbseiten in Blau, Nachtblau und Gold. Abgegrenzt wird über Flächen, nie über Linien. Die Bildwelt besteht aus sachlichen, gemeinfreien Archivaufnahmen (NASA, The Met) und einem stummen Erdvideo, das blass hinter dem Leitgedanken läuft. Alles ist selbst ausgeliefert und nachgewiesen.\n\nAbgelehnt sind zwei Gegenbilder: die cremefarbene Privatbank-Broschüre mit Goldschrift, die diese Seite ersetzt, und das Dashboard aus Kennzahlkacheln und Icon-Karten.",
     "keyCharacteristics": [
       "Weißer Grund, eine Flächenstufe, ein Blau; Gold nur, wo Gold gemeint ist",
       "Inter als einzige Familie, Zahlen immer tabellarisch",
@@ -442,7 +447,7 @@
       },
       {
         "name": "Die Ein-Moment-Regel",
-        "body": "Bewegung gibt es auf der Seite genau einmal: Titel, Leitsatz, Panel und Balken des Einstiegs bauen sich beim Laden auf. Danach wachsen nur die Regionsbalken der Allokation einmal an Ort und Stelle. Sprünge zu Kapiteln und der Tastaturfokus scrollen sofort, ohne Gleiten. Bedienelemente reagieren mit kurzen Zustandswechseln (unter 300 ms), sonst steht alles still.",
+        "body": "Bewegung gibt es auf der Seite genau einmal: Titel, Leitsatz, Panel und Balken des Einstiegs bauen sich beim Laden auf. Danach wachsen nur die Regionsbalken der Allokation einmal an Ort und Stelle. Das Erdvideo läuft als blasser Hintergrund des Leitgedankens in Schleife. Es startet erst im Bild, lässt sich anhalten und bleibt bei reduzierter Bewegung stehen; die Überschrift dieses Abschnitts haftet nicht, damit nichts zusätzlich über das bewegte Bild gleitet. Sprünge zu Kapiteln und der Tastaturfokus scrollen sofort, ohne Gleiten. Bedienelemente reagieren mit kurzen Zustandswechseln (unter 300 ms), sonst steht alles still.",
         "section": "layout"
       },
       {
@@ -455,7 +460,7 @@
       "**Do** Finanzblau (#1458D6) als einzige Handlungs- und Leitfarbe einsetzen und Diagrammfarben immer mit Wert und Namen zeigen.",
       "**Do** Fließtext auf der festen Achse ab Spalte 6 von 12 setzen und Überschriften in Spalte 1–5 haften lassen.",
       "**Do** Bewegung auf einen Moment beschränken: Der Einstieg baut sich auf, die Regionsbalken wachsen einmal an Ort und Stelle, alles andere steht still. UI-Übergänge bleiben unter 300 ms mit `cubic-bezier(.23,1,.32,1)`, Hover gibt es nur bei feinem Zeiger.",
-      "**Do** echte, gemeinfreie oder frei lizenzierte Archivbilder verwenden, selbst ausliefern, mit `srcset` anbieten und in der Fußzeile nachweisen. Jede Bearbeitung wie Ausschnitt oder Freistellung gehört in den Nachweis.",
+      "**Do** echte, gemeinfreie oder frei lizenzierte Archivbilder verwenden, selbst ausliefern, mit `srcset` anbieten und in der Fußzeile nachweisen. Jede Bearbeitung wie Ausschnitt oder Freistellung gehört in den Nachweis. Bewegtbild nur als blasser Hintergrund unter dem Schleier und immer mit Pausenschalter.",
       "**Do** jede neue Fläche auch in Dunkelmodus, Druck, reduzierter Bewegung und Kontrastmodus prüfen."
     ],
     "donts": [
