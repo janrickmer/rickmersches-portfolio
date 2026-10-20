@@ -125,7 +125,7 @@
   --map-stroke:#F2F5F9;
   --q1:#AFC9F3;--q2:#76A1EC;--q3:#3A6FDB;--q4:#0D3D9C;
   --de-label:#FFFFFF;
-  --veil:rgba(255,255,255,.82);
+  --veil:transparent;--video-base:#DCE3EC;--video-blend:screen;--pill:#FFFFFF;--pill-hover:var(--surface);
   /* Regionen (Diagramm-Reihen) */
   --s-na:#1458D6;--s-eu:#5AA3F2;--s-ap:#008C80;--s-la:#4CC3D9;--s-me:#2B50B5;--s-af:#77A6EE;--s-gold:#B38A22;
   /* Farbseiten */
@@ -171,7 +171,7 @@
     --map-stroke:#141D2C;
     --q1:#24467F;--q2:#3567BF;--q3:#6A9DF0;--q4:#B8D3FB;
     --de-label:#0B111C;
-    --veil:rgba(11,17,28,.82);
+    --veil:rgba(11,17,28,.82);--video-base:#05070B;--video-blend:normal;--pill:#1C2738;--pill-hover:#26324A;
     --s-na:#4F86EC;--s-eu:#8CC0F7;--s-ap:#1FB3A5;--s-la:#6BD3E6;--s-me:#5D7EDB;--s-af:#A6C4F4;--s-gold:#D4AE48;
     --blue:#123B86;--blue-ink:#EEF3FB;--blue-soft:#C4D6F5;--blue-bar:#7EA6EE;
     --navy:#141D2C;--navy-ink:#E9EEF6;--navy-soft:#A3AFC2;--navy-figure:#8DB4F7;
@@ -357,15 +357,20 @@ html:not(.js) .panel{display:none}
 .statement em{font-style:italic}
 /* Das Erdvideo läuft blass hinter dem Text; der Schleier hält den Kontrast auch über hellen Wolken bei AA */
 .leit{position:relative;isolation:isolate}
-.leit .sec-head>h2{position:static}
-.leit-bg{position:absolute;inset:0;z-index:-1;overflow:hidden;background:#05070B}
-.leit-bg video{width:100%;height:100%;object-fit:cover;object-position:50% 38%}
+.leit-bg{position:absolute;inset:0;z-index:-1;overflow:hidden;background:var(--video-base)}
+.leit-bg video{width:100%;height:100%;object-fit:cover;object-position:50% 38%;mix-blend-mode:var(--video-blend)}
+@media (max-width:600px){.leit-bg video{object-position:15% 38%}}
+/* ohne Skript: nur das Standbild, keine unbedienbare Videosteuerung unter dem Schleier */
+html:not(.js) .leit-bg video{display:none}
+html:not(.js) .leit-bg{background-image:url(assets/erde-iss-poster.jpg);background-position:50% 38%;background-size:cover;background-repeat:no-repeat;background-blend-mode:var(--video-blend)}
+.leit-side{grid-column:1/6;display:grid;justify-items:start;align-content:start;row-gap:24px}
+@media (max-width:900px){.leit-side{grid-column:1/-1}}
 .leit-bg::after{content:"";position:absolute;inset:0;background:var(--veil)}
 .leit-foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 24px;margin-top:clamp(48px,6vw,88px)}
 .leit-cap{font-size:var(--t-small);color:var(--muted)}
-.vid-toggle{min-height:44px;padding:0 18px;border-radius:999px;border:1px solid transparent;background:var(--surface-2);color:var(--ink);font:600 var(--t-small)/1 var(--font);cursor:pointer;transition:transform var(--t-press) var(--ease-out),background-color var(--t-hover) ease} /* taste-skill-ignore: unsichtbarer Rand, wird im Kontrastmodus zur Kontur */
+.vid-toggle{min-height:44px;padding:0 18px;border-radius:999px;border:1px solid transparent;background:var(--pill);color:var(--ink);font:600 var(--t-small)/1 var(--font);cursor:pointer;transition:transform var(--t-press) var(--ease-out),background-color var(--t-hover) ease} /* taste-skill-ignore: unsichtbarer Rand, wird im Kontrastmodus zur Kontur */
 .vid-toggle:active{transform:scale(.97)}
-@media (hover:hover) and (pointer:fine){.vid-toggle:hover{background:var(--bg)}}
+@media (hover:hover) and (pointer:fine){.vid-toggle:hover{background:var(--pill-hover)}}
 html:not(.js) .vid-toggle{display:none}
 
 /* ════════════ Weltkarte ════════════ */
@@ -768,7 +773,7 @@ footer :focus-visible{outline-color:var(--navy-ink)}
 @media print{
   :root{color-scheme:light}
   body{background:#fff;color:#000;font-size:10.5pt}
-  .topbar,.skip,#tooltip,.modes,.controls,.own-actions,.leit-bg,.leit-foot,.regions,.act,.amount,.amount-err,.wordmark,.globes,.globe-cap,#maphint{display:none!important}
+  .topbar,.skip,#tooltip,.modes,.controls,.own-actions,.leit-bg,.leit-foot,.vid-toggle,.regions,.act,.amount,.amount-err,.wordmark,.globes,.globe-cap,#maphint{display:none!important}
   main>section{padding-block:22pt}
   .alloc{min-height:0}
   .field-blue,.field-navy,.field-gold,footer,.why-head,.tool{background:#fff!important;color:#000!important}
@@ -1052,7 +1057,10 @@ const REGIONS=(()=>{
     </video>
   </div>
   <div class="wrap grid sec-head">
-    <h2 id="h-leitgedanke">Worum es geht</h2>
+    <div class="leit-side">
+      <h2 id="h-leitgedanke">Worum es geht</h2>
+      <button class="vid-toggle" id="vid-toggle" type="button" aria-describedby="leit-cap">Video anhalten</button>
+    </div>
     <div class="sec-body">
       <p class="statement">Das Rickmersche Portfolio verfolgt ein einziges, klar umrissenes Ziel: am
       weltweiten wirtschaftlichen Wachstum teilzuhaben&nbsp;— und dabei das Risiko <em>so weit wie irgend
@@ -1074,8 +1082,7 @@ const REGIONS=(()=>{
     </div>
   </div>
   <div class="wrap leit-foot">
-    <p class="leit-cap">Im Hintergrund: die Erde, gefilmt von der Internationalen Raumstation (NASA).</p>
-    <button class="vid-toggle" id="vid-toggle" type="button">Video anhalten</button>
+    <p class="leit-cap" id="leit-cap">Im Hintergrund: die Erde, gefilmt von der Internationalen Raumstation (NASA).</p>
   </div>
 </section>
 
@@ -2764,7 +2771,7 @@ const REGIONS=(()=>{
   v.addEventListener("play",label);
   v.addEventListener("pause",label);
   if("IntersectionObserver" in window){
-    new IntersectionObserver(es=>{visible=es[0].isIntersecting;sync();},{threshold:0.05}).observe(v);
+    new IntersectionObserver(es=>{visible=es[0].isIntersecting;sync();},{threshold:0,rootMargin:"-80px 0px 0px 0px"}).observe(v);
   }else{visible=true;sync();}
   calm.addEventListener("change",sync);
   document.addEventListener("visibilitychange",sync);

@@ -37,7 +37,6 @@ colors:
   night-blue: "#6C9FF6"
   night-bronze: "#372C15"
   night-bronze-ink: "#F3EBD3"
-  veil: "rgba(255, 255, 255, 0.82)"
   night-veil: "rgba(11, 17, 28, 0.82)"
 typography:
   display:
@@ -170,9 +169,9 @@ Eine kühle, nüchterne Palette: Papierweiß, ein Hauch Blaugrau als Fläche, ti
 - **Tinte** (ink): Text, ausgewählte Chips, Nachtblau-Farbseite und Fußzeile.
 - **Schiefer** (slate-muted): Sekundärtext wie Beschriftungen, ISINs und Bildunterschriften. Auf Weiß erreicht er AA.
 - **Feldrand** (field-stroke): Der einzige sichtbare Rand der Seite, an Eingabefeldern.
-- **Spurgrau** (track-grey): Die Hintergrundspur der Anteilsbalken.
+- **Spurgrau** (track-grey): Die Hintergrundspur der Anteilsbalken und im Hellmodus der Grund, auf dem das Erdvideo aufhellt.
 - **Nachtfarben** (night-paper, night-surface, night-ink, night-blue): Der Dunkelmodus. Gleiche Rollen, hellere Akzente.
-- **Schleier** (veil, night-veil): Papier bzw. Nachtpapier mit 82 % Deckkraft über dem Erdvideo im Leitgedanken. Er verblasst das Video so weit, dass jeder Text über jedem Videobild WCAG AA hält.
+- **Schleier** (track-grey, night-veil): Im Hellmodus liegt das Erdvideo im Mischmodus Aufhellen (`screen`) auf Spurgrau. Das Schwarz des Alls wird dadurch zu Spurgrau, die Erde zu hellem Weißlicht, und dunkle Tinte steht darauf mit mindestens 13:1. Im Dunkelmodus liegt Nachtpapier mit 82 % Deckkraft über dem Video. In beiden Modi hält jeder Text über jedem Videobild WCAG AA. Ohne JavaScript steht das Standbild auf dieselbe Weise im Hintergrund.
 
 ### Named Rules
 **Die Ein-Blau-Regel.** Finanzblau ist die einzige Handlungsfarbe und die Leitreihe der Diagramme. Es schmückt nie, und kein zweiter Akzent tritt neben es.

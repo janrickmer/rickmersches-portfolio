@@ -214,11 +214,6 @@
           "oklch(95% 0.040 84.4)"
         ]
       },
-      "veil": {
-        "role": "neutral",
-        "displayName": "Schleier über dem Erdvideo",
-        "canonical": "rgba(255,255,255,.82)"
-      },
       "night-veil": {
         "role": "neutral",
         "displayName": "Schleier im Dunkelmodus",
