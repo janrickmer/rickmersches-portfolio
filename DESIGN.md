@@ -203,7 +203,7 @@ Eine kühle, nüchterne Palette: Papierweiß, ein Hauch Blaugrau als Fläche, ti
 
 Zwölfspaltiges Raster in einem Container von höchstens 1680 px, mit fließendem Seitenrand und Spaltenabstand (siehe spacing). Textseiten setzen die Überschrift in die Spalten 1–5 und den Text auf die feste Achse ab Spalte 6 (rund 42 %). Diese Achse hält über alle Textseiten. Farbseiten laufen vollflächig. Abschnitte atmen mit großzügigem vertikalem Abstand (section).
 
-Der Einstieg teilt sich etwa 55/45: links Titel, Leitsatz, Handlung und fünf Kennzahlen, rechts ein Flächenpanel mit dem live gerechneten Regionsbalken. Unter 1000 px stapelt sich alles einspaltig: Das Live-Panel rückt direkt hinter die Handlung und vor die Kennzahlen, die auf dem Handy 3 + 2 stehen. Unter 820 px wird die Navigation zu einem überlagernden Menüblatt. Unter 980 px bzw. 480 px werden die Tabellen zu Zeilenkarten. Bis 900 px werden die Säulen der Weltregionen zu einer Liste aus Beschriftung und darunterliegendem Balken. Text steht nie im Balken. Auf dem Handy steht die Länderliste zweispaltig aus Name und Wert, unter 390 px einspaltig. Die Punkt-Balken entfallen dort, weil sie bei Anteilen unter 1 % keine Information tragen. Sprungziele landen genau unter der 76 px hohen Kopfleiste.
+Der Einstieg teilt sich etwa 55/45: links Titel, Leitsatz, Handlung und sechs Kennzahlen in einem Raster aus 3 + 3, rechts ein Flächenpanel mit dem live gerechneten Regionsbalken. Unter 1000 px stapelt sich alles einspaltig: Das Live-Panel rückt direkt hinter die Handlung und vor die Kennzahlen, die auch auf dem Handy 3 + 3 stehen, unter 360 px 2 + 2 + 2. Unter 820 px wird die Navigation zu einem überlagernden Menüblatt. Unter 980 px bzw. 480 px werden die Tabellen zu Zeilenkarten. Bis 900 px werden die Säulen der Weltregionen zu einer Liste aus Beschriftung und darunterliegendem Balken. Text steht nie im Balken. Auf dem Handy steht die Länderliste zweispaltig aus Name und Wert, unter 390 px einspaltig. Die Punkt-Balken entfallen dort, weil sie bei Anteilen unter 1 % keine Information tragen. Sprungziele landen genau unter der 76 px hohen Kopfleiste.
 
 **Die Feste-Achse-Regel.** Fließtext beginnt auf Textseiten immer an derselben Achse. Ausnahmen sind vollbreite Diagramme, Tabellen und Fotos sowie Text, der direkt unter einem Foto in dessen Spalte weiterläuft. Ein Beispiel ist der deutsche Anker: Foto und Begründung stehen links, die Deutschlandkarte rechts daneben.
 
@@ -266,9 +266,10 @@ Die Sprache aller Diagramme: ein gerundeter Balken auf grauer Spur oder freisteh
 - **Do** Bewegung auf einen Moment beschränken: Der Einstieg baut sich auf, die Regionsbalken wachsen einmal an Ort und Stelle, alles andere steht still. UI-Übergänge bleiben unter 300 ms mit `cubic-bezier(.23,1,.32,1)`, Hover gibt es nur bei feinem Zeiger.
 - **Do** echte, gemeinfreie oder frei lizenzierte Archivbilder verwenden, selbst ausliefern, mit `srcset` anbieten und in der Fußzeile nachweisen. Jede Bearbeitung wie Ausschnitt oder Freistellung gehört in den Nachweis. Bewegtbild nur als blasser Hintergrund unter dem Schleier und immer mit Pausenschalter.
 - **Do** jede neue Fläche auch in Dunkelmodus, Druck, reduzierter Bewegung und Kontrastmodus prüfen.
+- **Do** Zahlen, die nicht aus dem Sparplan selbst stammen (etwa die enthaltenen Einzelwerte), als abgerundeten Mindestwert zeigen und ihre Herleitung mit Stand und Quelle in einem Methodik-Satz im zugehörigen Kapitel nennen.
 
 ### Don't:
-- **Don't** Kennzahlen als große Zahl über einer Beschriftung außerhalb der fünf Einstiegsfakten wiederholen. Keine Stat-Kacheln, keine Zahlen-Kicker über Überschriften.
+- **Don't** Kennzahlen als große Zahl über einer Beschriftung außerhalb der sechs Einstiegsfakten wiederholen. Keine Stat-Kacheln, keine Zahlen-Kicker über Überschriften.
 - **Don't** Eyebrows, Trennlinien, Verläufe, Glas-Effekte oder Schatten in Ruhe einsetzen.
 - **Don't** eine zweite Schriftfamilie, Monospace oder gesperrte Großbuchstaben verwenden.
 - **Don't** Gold als Schmuckfarbe einsetzen oder die cremefarbene Privatbank-Anmutung zurückholen.

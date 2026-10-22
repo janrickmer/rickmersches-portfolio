@@ -461,10 +461,11 @@
       "**Do** Fließtext auf der festen Achse ab Spalte 6 von 12 setzen und Überschriften in Spalte 1–5 haften lassen.",
       "**Do** Bewegung auf einen Moment beschränken: Der Einstieg baut sich auf, die Regionsbalken wachsen einmal an Ort und Stelle, alles andere steht still. UI-Übergänge bleiben unter 300 ms mit `cubic-bezier(.23,1,.32,1)`, Hover gibt es nur bei feinem Zeiger.",
       "**Do** echte, gemeinfreie oder frei lizenzierte Archivbilder verwenden, selbst ausliefern, mit `srcset` anbieten und in der Fußzeile nachweisen. Jede Bearbeitung wie Ausschnitt oder Freistellung gehört in den Nachweis. Bewegtbild nur als blasser Hintergrund unter dem Schleier und immer mit Pausenschalter.",
-      "**Do** jede neue Fläche auch in Dunkelmodus, Druck, reduzierter Bewegung und Kontrastmodus prüfen."
+      "**Do** jede neue Fläche auch in Dunkelmodus, Druck, reduzierter Bewegung und Kontrastmodus prüfen.",
+      "**Do** Zahlen, die nicht aus dem Sparplan selbst stammen (etwa die enthaltenen Einzelwerte), als abgerundeten Mindestwert zeigen und ihre Herleitung mit Stand und Quelle in einem Methodik-Satz im zugehörigen Kapitel nennen."
     ],
     "donts": [
-      "**Don't** Kennzahlen als große Zahl über einer Beschriftung außerhalb der fünf Einstiegsfakten wiederholen. Keine Stat-Kacheln, keine Zahlen-Kicker über Überschriften.",
+      "**Don't** Kennzahlen als große Zahl über einer Beschriftung außerhalb der sechs Einstiegsfakten wiederholen. Keine Stat-Kacheln, keine Zahlen-Kicker über Überschriften.",
       "**Don't** Eyebrows, Trennlinien, Verläufe, Glas-Effekte oder Schatten in Ruhe einsetzen.",
       "**Don't** eine zweite Schriftfamilie, Monospace oder gesperrte Großbuchstaben verwenden.",
       "**Don't** Gold als Schmuckfarbe einsetzen oder die cremefarbene Privatbank-Anmutung zurückholen.",
