@@ -1,0 +1,11 @@
+{
+  "name": "Klausur – Präsentation",
+  "short_name": "Klausur",
+  "start_url": "./",
+  "scope": "./",
+  "display": "fullscreen",
+  "orientation": "landscape",
+  "background_color": "#111111",
+  "theme_color": "#111111",
+  "icons": [{ "src": "icon.png", "sizes": "180x180", "type": "image/png" }]
+}
